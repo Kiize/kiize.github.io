@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Sioyek Rebuild"
 date: 2025-08-21 
 categories: 

@@ -1,8 +1,9 @@
+---
 layout: post
 title: "Sioyek Rebuild"
-date: YYYY-MM-DD hh:mm:ss -0000
+date: 2025-08-21 
 categories: 
-
+---
 (This is also a post test)
 
 # The Problem

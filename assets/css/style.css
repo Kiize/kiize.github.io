@@ -1,0 +1,77 @@
+/* --- Reset base --- */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Stile generale --- */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* --- Header --- */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Lista post in home --- */
+ul.post-list {
+  list-style: none;
+}
+
+ul.post-list li {
+  margin-bottom: 1.2rem;
+}
+
+ul.post-list a {
+  font-size: 1.2rem;
+  color: #007acc;
+  text-decoration: none;
+}
+
+ul.post-list a:hover {
+  text-decoration: underline;
+}
+
+ul.post-list span {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* --- Contenuto del post --- */
+article {
+  margin-bottom: 2rem;
+}
+
+article h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+article p {
+  margin-bottom: 1rem;
+}

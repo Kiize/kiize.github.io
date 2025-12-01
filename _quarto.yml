@@ -13,6 +13,22 @@ website:
 
 format:
   html:
-    theme: cosmo
-    toc: true
-    css: styles.css
+    theme:
+      light: cosmo
+      dark: darkly
+    number-sections: true
+
+navbar:
+  left:
+    - text: Home
+      href: index.qmd
+    - text: Projects
+      href: projects/index.qmd
+    - text: Blog
+      href: posts/index.qmd
+    - text: About
+      href: about.qmd
+
+page:
+  toc: true
+  toc-depth: 2

@@ -3,9 +3,5 @@ title: "Quantum Chaos"
 author: "Kiize"
 date: 2025-11-08
 ---
-
-
-<iframe src="https://github.com/Kiize/Quantum_Chaos/blob/main/tex/qchaos.pdf"
-        width="100%" 
-        height="700px">
-</iframe>
+We want to understand quantum chaos, where chaos manifest itself in the statistical properties of our system.
+To do this, we will study a quantum system whose classical counterpart is chaotic: the quantum billiard. You can click [here](https://kiize.github.io/Quantum_Chaos/tex/qchaos.pdf) to view the pdf version of this work.

@@ -1,6 +1,5 @@
 ---
 title: "Sioyek Rebuild"
-description: "Post description"
 author: "Kiize"
 date: 2025-08-21 
 ---

@@ -25,7 +25,7 @@
     "href": "posts/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\nPost description\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\nPost description\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025-08-21-Sioyek-rebuild/index.html",
@@ -33,5 +33,12 @@
     "title": "Sioyek Rebuild",
     "section": "",
     "text": "In yay or paru, after you upgrade a package, it is up to you to rebuild it when needed. This is the case for sioyek. Below you can find the command to rebuild the package.\n\n\nThe solution\nThe command to rebuil sioyek is\nyay --rebuild sioyek"
+  },
+  {
+    "objectID": "posts/2025-0905-restart-waybar/index.html",
+    "href": "posts/2025-0905-restart-waybar/index.html",
+    "title": "Waybar restart",
+    "section": "",
+    "text": "When you change the waybar config file you have to restart waybar to see the changes. \n\nThe solution\nThe command to restart waybar is\nkillall -SIGUSR2 waybar"
   }
 ]

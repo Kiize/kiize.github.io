@@ -1,0 +1,18 @@
+---
+title: "Sioyek Rebuild"
+description: "Post description"
+author: "Kiize"
+date: 2025-08-21 
+---
+
+In yay or paru, after you upgrade a package, it is up to you to rebuild it when [needed](https://bbs.archlinux.org/viewtopic.php?id=294674). This is the case for sioyek.
+
+
+<!--more-->
+
+# The solution
+
+The command to rebuil sioyek is
+```
+yay --rebuild sioyek
+```

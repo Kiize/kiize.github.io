@@ -1,5 +1,10 @@
 ---
 title: "About"
+format: html
 ---
 
-About this site
+I am a physicist working in statistical physics and quantum mechanics, often using numerical methods with Python and Julia.
+
+## Contact Me
+
+Contact me by [email](vitogallo99@gmail.com) if you have any questions about my work or if you want to discuss an idea.

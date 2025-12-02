@@ -1,0 +1,16 @@
+---
+title: "Projects"
+listing:
+  type: default
+  contents: .
+  sort: "date"
+  fields: [title, description, date]
+  image-placeholder: thumbnail.png
+---
+
+# Research Projects
+
+In this section I collect my scientific projects, notes, and exploratory work.  
+Each project includes a short overview, methods, figures, and links to code or related articles.
+
+Browse the list below to explore ongoing and completed work.

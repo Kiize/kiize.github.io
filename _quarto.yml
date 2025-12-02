@@ -1,33 +1,25 @@
 project:
   type: website
-  output-dir: docs  # <-- FONDAMENTALE per GitHub Pages semplice
+  output-dir: docs  
 
 website:
-  title: "My personal site"
+  title: "Kiize's personal page"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
         text: About
+      - href: posts/index.qmd
+        text: Blog
 
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
-    number-sections: true
-
-navbar:
-  left:
-    - text: Home
-      href: index.qmd
-    - text: Projects
-      href: projects/index.qmd
-    - text: Blog
-      href: posts/index.qmd
-    - text: About
-      href: about.qmd
+      light: morph
+      dark: [vapor, theme-dark.scss]
+    number-sections: false
+    respect-user-color-scheme: true
 
 page:
   toc: true

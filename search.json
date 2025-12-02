@@ -25,7 +25,7 @@
     "href": "posts/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\nPost description\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\n\n\nExceed 100% Audio in Arch\n\n\n\n\n\n\n\n\nAug 22, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\n\n\nQuantum Chaos\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\n\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\n\n\nExceed 100% Audio in Arch\n\n\n\n\n\n\n\n\nAug 22, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\n\n\nQuantum Chaos\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -33,6 +33,13 @@
     "title": "kiize.github.io",
     "section": "",
     "text": "This is my personal page built with Quarto.\nIn About me you can find more informations about me, while in Blog you can discover what I am working on and some linux commands I find useful."
+  },
+  {
+    "objectID": "posts/2025-11-08-qchaos/index.html",
+    "href": "posts/2025-11-08-qchaos/index.html",
+    "title": "Quantum Chaos",
+    "section": "",
+    "text": "We want to understand quantum chaos, where chaos manifest itself in the statistical properties of our system. To do this, we will study a quantum system whose classical counterpart is chaotic: the quantum billiard. You can click here to view the pdf version of this work."
   },
   {
     "objectID": "posts/2025-0905-restart-waybar/index.html",

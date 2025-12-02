@@ -25,7 +25,7 @@
     "href": "posts/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\nPost description\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\nPost description\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\n\n\nExceed 100% Audio in Arch\n\n\n\n\n\n\n\n\nAug 22, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\n\n\nQuantum Chaos\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025-08-21-Sioyek-rebuild/index.html",
@@ -40,5 +40,12 @@
     "title": "Waybar restart",
     "section": "",
     "text": "When you change the waybar config file you have to restart waybar to see the changes. \n\nThe solution\nThe command to restart waybar is\nkillall -SIGUSR2 waybar"
+  },
+  {
+    "objectID": "posts/2025-08-22-exceed-audio/index.html",
+    "href": "posts/2025-08-22-exceed-audio/index.html",
+    "title": "Exceed 100% Audio in Arch",
+    "section": "",
+    "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
   }
 ]

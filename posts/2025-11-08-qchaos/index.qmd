@@ -1,0 +1,11 @@
+---
+title: "Quantum Chaos"
+author: "Kiize"
+date: 2025-11-08
+---
+
+
+<iframe src="https://github.com/Kiize/Quantum_Chaos/blob/main/tex/qchaos.pdf"
+        width="100%" 
+        height="700px">
+</iframe>

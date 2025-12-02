@@ -7,6 +7,13 @@
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
+    "objectID": "posts/2025-08-22-exceed-audio/index.html",
+    "href": "posts/2025-08-22-exceed-audio/index.html",
+    "title": "Exceed 100% Audio in Arch",
+    "section": "",
+    "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -21,6 +28,13 @@
     "text": "Contact Me\nContact me by email if you have any questions about my work or if you want to discuss an idea."
   },
   {
+    "objectID": "posts/2025-0905-restart-waybar/index.html",
+    "href": "posts/2025-0905-restart-waybar/index.html",
+    "title": "Waybar restart",
+    "section": "",
+    "text": "When you change the waybar config file you have to restart waybar to see the changes. \n\nThe solution\nThe command to restart waybar is\nkillall -SIGUSR2 waybar"
+  },
+  {
     "objectID": "posts/index.html",
     "href": "posts/index.html",
     "title": "Projects",
@@ -32,20 +46,6 @@
     "href": "posts/2025-08-21-Sioyek-rebuild/index.html",
     "title": "Sioyek Rebuild",
     "section": "",
-    "text": "In yay or paru, after you upgrade a package, it is up to you to rebuild it when needed. This is the case for sioyek. Below you can find the command to rebuild the package.\n\n\nThe solution\nThe command to rebuil sioyek is\nyay --rebuild sioyek"
-  },
-  {
-    "objectID": "posts/2025-0905-restart-waybar/index.html",
-    "href": "posts/2025-0905-restart-waybar/index.html",
-    "title": "Waybar restart",
-    "section": "",
-    "text": "When you change the waybar config file you have to restart waybar to see the changes. \n\nThe solution\nThe command to restart waybar is\nkillall -SIGUSR2 waybar"
-  },
-  {
-    "objectID": "posts/2025-08-22-exceed-audio/index.html",
-    "href": "posts/2025-08-22-exceed-audio/index.html",
-    "title": "Exceed 100% Audio in Arch",
-    "section": "",
-    "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
+    "text": "In yay or paru, after you upgrade a package, it is up to you to rebuild it when needed. This is the case for sioyek.\n\n\nThe solution\nThe command to rebuil sioyek is\nyay --rebuild sioyek"
   }
 ]

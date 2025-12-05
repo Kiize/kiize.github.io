@@ -3,7 +3,7 @@ title: "Projects"
 listing:
   type: default
   contents: .
-  sort: "date"
+  sort: "date desc"
   fields: [title, description, date]
   image-placeholder: thumbnail.png
 ---

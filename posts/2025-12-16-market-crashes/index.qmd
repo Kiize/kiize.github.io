@@ -4,4 +4,4 @@ author: "Kiize"
 date: 2025-12-16
 ---
 
-![](https://kiize.github.io/Market_crashes)
+{{< include https://kiize.github.io/Market_crashes >}}

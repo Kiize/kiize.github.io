@@ -21,6 +21,13 @@
     "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
   },
   {
+    "objectID": "posts/2025-12-16-market-crashes/index.html",
+    "href": "posts/2025-12-16-market-crashes/index.html",
+    "title": "Market crashes",
+    "section": "",
+    "text": "Analysis of the log returns and of the rolling tail exponent for the S&P 500 index with a particular focus on their behaviors during the market crashes of 2000, 2008, 2020."
+  },
+  {
     "objectID": "posts/2025-11-08-qchaos/index.html",
     "href": "posts/2025-11-08-qchaos/index.html",
     "title": "Quantum Chaos",

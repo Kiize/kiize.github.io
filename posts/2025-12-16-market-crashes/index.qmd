@@ -1,8 +1,7 @@
 ---
 title: "Market crashes"
 author: "Kiize"
-date: 2025-11-08
-format: gfm
+date: 2025-12-16
 ---
 
 ![](https://kiize.github.io/Market_crashes)

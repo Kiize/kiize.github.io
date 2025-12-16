@@ -54,5 +54,12 @@
     "title": "Quantum Chaos",
     "section": "",
     "text": "We want to understand quantum chaos, where chaos manifest itself in the statistical properties of our system. To do this, we will study a quantum system whose classical counterpart is chaotic: the quantum billiard. You can click here to view the pdf version of this work."
+  },
+  {
+    "objectID": "posts/2025-12-16-market-crashes/index.html",
+    "href": "posts/2025-12-16-market-crashes/index.html",
+    "title": "Market crashes",
+    "section": "",
+    "text": "Analysis of the log returns and of the rolling tail exponent for the S&P 500 index with a particular focus on their behaviors during the market crashes of 2000, 2008, 2020."
   }
 ]

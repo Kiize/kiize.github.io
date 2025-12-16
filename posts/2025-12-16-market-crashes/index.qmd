@@ -4,4 +4,7 @@ author: "Kiize"
 date: 2025-12-16
 ---
 
-{{< include https://kiize.github.io/Market_crashes >}}
+Analysis of the log returns and of the rolling tail exponent for the S&P 500 index with a particular focus on their behaviors during the market crashes of 2000, 2008, 2020.
+
+![](kiize.github.io/Market_crashes/figs/log_ret_SP500.png)
+![](kiize.github.io/Market_crashes/figs/rolling_tail_exponent.png)

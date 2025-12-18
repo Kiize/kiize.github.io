@@ -14,39 +14,11 @@
     "text": "Contact Me\nContact me by email if you have any questions about my work or if you want to discuss an idea."
   },
   {
-    "objectID": "posts/2025-08-22-exceed-audio/index.html",
-    "href": "posts/2025-08-22-exceed-audio/index.html",
-    "title": "Exceed 100% Audio in Arch",
+    "objectID": "posts/2025-08-21-Sioyek-rebuild/index.html",
+    "href": "posts/2025-08-21-Sioyek-rebuild/index.html",
+    "title": "Sioyek Rebuild",
     "section": "",
-    "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
-  },
-  {
-    "objectID": "posts/2025-12-16-market-crashes/index.html",
-    "href": "posts/2025-12-16-market-crashes/index.html",
-    "title": "Market crashes",
-    "section": "",
-    "text": "Financial markets are often described as complex systems, and major crashes are sometimes compared to critical points in physics. In this article, we explore this analogy by analyzing the log returns of the S&P 500 index, focusing on the crashes of 2000, 2008, and 2020, and asking whether market instability can be understood as a kind of phase transition.\nWe begin by defining daily log returns as the logarithmic difference between consecutive closing prices.\n\\[\nr(t) = \\log\\text{Close}(t) - \\log\\text{Close}(t-1)\n\\]\nWhen visualized over time, their values highlight the periods of market turmoil. The distribution of log returns is markedly non-Gaussian: compared to a normal distribution with the same mean and variance, it exhibits a higher peak and much fatter tails, indicating an enhanced probability of extreme events.\nTo quantify this deviation, we study the tails of the distribution using the complementary cumulative distribution function (CCDF). Assuming a power-law behavior for large fluctuations, we extract a tail exponent\n\\[\nP(x) \\propto |x|^{-\\alpha - 1},\n\\]\nand find \\(\\alpha = 4.1\\) for the S&P 500. This confirms that while the variance is finite, extreme events are far more likely than in a Gaussian setting: a well-known stylized fact of financial markets.\nWe then analyze temporal correlations. Standard autocorrelations of log returns decay very rapidly, suggesting that price changes themselves are largely uncorrelated. In contrast, the autocorrelations of absolute log returns (volatility) decay much more slowly, revealing long-range correlations and an underlying market structure that persists over time.\nFinally, we investigate the approach to market crashes by computing a rolling tail exponent \\(\\alpha\\) over a moving time window. Interpreting α as an indicator of instability, we find that it often decreases before major crashes, signaling fattening tails and an increased likelihood of extreme events, much like growing correlations near a critical point in a phase transition. This behavior is evident for the dot-com bubble and the 2008 financial crisis. The COVID-19 crash, however, behaves differently: α drops only during the crash itself, reflecting the fact that it was triggered by an external shock rather than an endogenous market bubble.\nOverall, this analysis supports the view that some financial crashes can be interpreted as critical phenomena, where markets become strongly correlated and extreme events dominate, strengthening the analogy between market dynamics and phase transitions in physical systems.\nFor a more in-depth discussion, refer to this pdf."
-  },
-  {
-    "objectID": "posts/2025-11-08-qchaos/index.html",
-    "href": "posts/2025-11-08-qchaos/index.html",
-    "title": "Quantum Chaos",
-    "section": "",
-    "text": "We want to understand quantum chaos, where chaos manifest itself in the statistical properties of our system. To do this, we will study a quantum system whose classical counterpart is chaotic: the quantum billiard. You can click here to view the pdf version of this work."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "kiize.github.io",
-    "section": "",
-    "text": "This is my personal page built with Quarto.\nIn About you can find more informations about me, while in Blog you can discover what I am working on and some linux commands I find useful."
-  },
-  {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nMarket crashes\n\n\n\n\n\n\n\n\nDec 16, 2025\n\n\n\n\n\n\n\nQuantum Chaos\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\n\n\nExceed 100% Audio in Arch\n\n\n\n\n\n\n\n\nAug 22, 2025\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\n\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\nNo matching items"
+    "text": "In yay or paru, after you upgrade a package, it is up to you to rebuild it when needed. This is the case for sioyek.\n\n\nThe solution\nThe command to rebuil sioyek is\nyay --rebuild sioyek"
   },
   {
     "objectID": "posts/2025-0905-restart-waybar/index.html",
@@ -56,10 +28,45 @@
     "text": "When you change the waybar config file you have to restart waybar to see the changes. \n\nThe solution\nThe command to restart waybar is\nkillall -SIGUSR2 waybar"
   },
   {
-    "objectID": "posts/2025-08-21-Sioyek-rebuild/index.html",
-    "href": "posts/2025-08-21-Sioyek-rebuild/index.html",
-    "title": "Sioyek Rebuild",
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "In yay or paru, after you upgrade a package, it is up to you to rebuild it when needed. This is the case for sioyek.\n\n\nThe solution\nThe command to rebuil sioyek is\nyay --rebuild sioyek"
+    "text": "Research Projects\nIn this section I collect my scientific projects, notes, and exploratory work.\nEach project includes a short overview, methods, figures, and links to code or related articles.\nBrowse the list below to explore ongoing and completed work.\n\n\n\n\n\n\n\n\n\n\nMarket crashes\n\n\n\n\n\n\n\n\nDec 16, 2025\n\n\n\n\n\n\n\nMarket crashes\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\nQuantum Chaos\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\n\n\n\n\n\nWaybar restart\n\n\n\n\n\n\n\n\nSep 5, 2025\n\n\n\n\n\n\n\nExceed 100% Audio in Arch\n\n\n\n\n\n\n\n\nAug 22, 2025\n\n\n\n\n\n\n\nSioyek Rebuild\n\n\n\n\n\n\n\n\nAug 21, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "kiize.github.io",
+    "section": "",
+    "text": "This is my personal page built with Quarto.\nIn About you can find more informations about me, while in Blog you can discover what I am working on and some linux commands I find useful."
+  },
+  {
+    "objectID": "posts/2025-11-08-qchaos/index.html",
+    "href": "posts/2025-11-08-qchaos/index.html",
+    "title": "Quantum Chaos",
+    "section": "",
+    "text": "We want to understand quantum chaos, where chaos manifest itself in the statistical properties of our system. To do this, we will study a quantum system whose classical counterpart is chaotic: the quantum billiard. You can click here to view the pdf version of this work."
+  },
+  {
+    "objectID": "posts/2025-12-16-market-crashes/index.html",
+    "href": "posts/2025-12-16-market-crashes/index.html",
+    "title": "Market crashes",
+    "section": "",
+    "text": "Financial markets are often described as complex systems, and major crashes are sometimes compared to critical points in physics. In this article, we explore this analogy by analyzing the log returns of the S&P 500 index, focusing on the crashes of 2000, 2008, and 2020, and asking whether market instability can be understood as a kind of phase transition.\nWe begin by defining daily log returns as the logarithmic difference between consecutive closing prices.\n\\[\nr(t) = \\log\\text{Close}(t) - \\log\\text{Close}(t-1)\n\\]\nWhen visualized over time, their values highlight the periods of market turmoil. The distribution of log returns is markedly non-Gaussian: compared to a normal distribution with the same mean and variance, it exhibits a higher peak and much fatter tails, indicating an enhanced probability of extreme events.\nTo quantify this deviation, we study the tails of the distribution using the complementary cumulative distribution function (CCDF). Assuming a power-law behavior for large fluctuations, we extract a tail exponent\n\\[\nP(x) \\propto |x|^{-\\alpha - 1},\n\\]\nand find \\(\\alpha = 4.1\\) for the S&P 500. This confirms that while the variance is finite, extreme events are far more likely than in a Gaussian setting: a well-known stylized fact of financial markets.\nWe then analyze temporal correlations. Standard autocorrelations of log returns decay very rapidly, suggesting that price changes themselves are largely uncorrelated. In contrast, the autocorrelations of absolute log returns (volatility) decay much more slowly, revealing long-range correlations and an underlying market structure that persists over time.\nFinally, we investigate the approach to market crashes by computing a rolling tail exponent \\(\\alpha\\) over a moving time window. Interpreting α as an indicator of instability, we find that it often decreases before major crashes, signaling fattening tails and an increased likelihood of extreme events, much like growing correlations near a critical point in a phase transition. This behavior is evident for the dot-com bubble and the 2008 financial crisis. The COVID-19 crash, however, behaves differently: α drops only during the crash itself, reflecting the fact that it was triggered by an external shock rather than an endogenous market bubble.\nOverall, this analysis supports the view that some financial crashes can be interpreted as critical phenomena, where markets become strongly correlated and extreme events dominate, strengthening the analogy between market dynamics and phase transitions in physical systems.\nFor a more in-depth discussion, refer to this pdf."
+  },
+  {
+    "objectID": "posts/2025-08-22-exceed-audio/index.html",
+    "href": "posts/2025-08-22-exceed-audio/index.html",
+    "title": "Exceed 100% Audio in Arch",
+    "section": "",
+    "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
+  },
+  {
+    "objectID": "posts/2025-11-18-glass-transition/index.html",
+    "href": "posts/2025-11-18-glass-transition/index.html",
+    "title": "Market crashes",
+    "section": "",
+    "text": "In this article, we study the glass transition using the Frederickson Anderson (FA) model, a simple yet powerful example of a kinetically constrained model that captures the essential features of glassy dynamics. By supercooling a liquid below its freezing point, one can obtain a glass, a solid far from equilibrium that does not relax on experimentally relevant time scales. Although a characteristic temperature \\(T_g\\) is often introduced, the glass transition is not a true phase transition and no discontinuity appears in thermodynamic observables.\nThe FA model is defined on a two dimensional \\(L \\times L\\) lattice, where each site can be either mobile or immobile. We denote these states by a binary variable \\(n_i \\in {0,1}\\), where \\(n_i = 1\\) represents a mobile low density region and \\(n_i = 0\\) a less mobile high density one. The energy of the system is simply\n\\[\nE = \\sum_i n_i .\n\\]\nDespite this trivial Hamiltonian, the dynamics is highly non trivial. A site can flip only if at least one of its nearest neighbours is mobile. This kinetic constraint encodes the idea that local rearrangements in a glass require nearby free volume.\nWe simulate the dynamics using a Metropolis algorithm. At each step a random site is selected and, if the kinetic constraint is satisfied, the spin flip is accepted with probability\n\\[\np = \\min(1, e^{-\\beta \\Delta E}),\n\\]\nwhere \\(\\beta\\) is the inverse temperature and \\(\\Delta E\\) is the energy difference associated with the flip. One Monte Carlo step corresponds to \\(L^2\\) attempted updates. After an initial thermalization stage, we measure the concentration of mobile regions\n\\[\nC(t) = \\frac{1}{L^2} \\sum_i n_i(t)\n\\]\nas a function of time.\nAt fixed temperature, the concentration fluctuates around a well defined mean value. As the temperature is lowered, this mean concentration decreases smoothly, with no sign of a sharp transition. This is consistent with the fact that the glass transition is not a thermodynamic phase transition.\nTo characterize the dynamics, we study the autocorrelation function of the concentration,\n\\[\nA(\\tau) = \\langle C(t) C(t + \\tau)\\rangle - \\langle C \\rangle^2.\n\\]\nAt high temperatures, correlations decay rapidly, while at lower temperatures the decay becomes much slower, signaling increasingly sluggish dynamics. By fitting the autocorrelation functions with an exponential form \\(A e^{-t/\\tau}\\), we extract a relaxation time \\(\\tau\\).\nIn an intermediate temperature regime, we find that the relaxation time follows an Arrhenius law,\n\\[\n\\log \\tau \\propto \\beta\n\\]\nindicating that the system behaves as an Arrhenius glass. At lower temperatures, this linear behavior breaks down and the relaxation time grows faster than exponentially, marking a crossover to super Arrhenius or fragile glass behavior.\nThe physical origin of this crossover is revealed by studying dynamic heterogeneity. By counting how often each lattice site flips after thermalization, we observe that at high temperatures the dynamics is spatially homogeneous, while at low temperatures the system separates into regions of high and low mobility. These heterogeneous dynamics provide a microscopic explanation for the dramatic slowing down observed in the glassy regime.\nOverall, this work shows how a minimal kinetically constrained model reproduces many qualitative features of the glass transition, including the absence of a true phase transition, the emergence of Arrhenius and super Arrhenius regimes, and the appearance of dynamic heterogeneity at low temperatures.\nFor a more in-depth discussion, refer to this pdf."
   }
 ]

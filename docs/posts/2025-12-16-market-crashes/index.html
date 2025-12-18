@@ -75,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -326,8 +355,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Analysis of the log returns and of the rolling tail exponent for the S&amp;P 500 index with a particular focus on their behaviors during the market crashes of 2000, 2008, 2020.</p>
-<p><img src="kiize.github.io/Market_crashes/figs/log_ret_SP500.png" class="img-fluid"> <img src="kiize.github.io/Market_crashes/figs/rolling_tail_exponent.png" class="img-fluid"></p>
+<p>Financial markets are often described as complex systems, and major crashes are sometimes compared to critical points in physics. In this article, we explore this analogy by analyzing the log returns of the S&amp;P 500 index, focusing on the crashes of 2000, 2008, and 2020, and asking whether market instability can be understood as a kind of phase transition.</p>
+<p>We begin by defining daily log returns as the logarithmic difference between consecutive closing prices.</p>
+<p><span class="math display">\[
+r(t) = \log\text{Close}(t) - \log\text{Close}(t-1)
+\]</span></p>
+<p>When visualized over time, their values highlight the periods of market turmoil. The distribution of log returns is markedly non-Gaussian: compared to a normal distribution with the same mean and variance, it exhibits a higher peak and much fatter tails, indicating an enhanced probability of extreme events.</p>
+<p>To quantify this deviation, we study the tails of the distribution using the complementary cumulative distribution function (CCDF). Assuming a power-law behavior for large fluctuations, we extract a tail exponent</p>
+<p><span class="math display">\[
+P(x) \propto |x|^{-\alpha - 1},
+\]</span></p>
+<p>and find <span class="math inline">\(\alpha = 4.1\)</span> for the S&amp;P 500. This confirms that while the variance is finite, extreme events are far more likely than in a Gaussian setting: a well-known stylized fact of financial markets.</p>
+<p>We then analyze temporal correlations. Standard autocorrelations of log returns decay very rapidly, suggesting that price changes themselves are largely uncorrelated. In contrast, the autocorrelations of absolute log returns (volatility) decay much more slowly, revealing long-range correlations and an underlying market structure that persists over time.</p>
+<p>Finally, we investigate the approach to market crashes by computing a rolling tail exponent <span class="math inline">\(\alpha\)</span> over a moving time window. Interpreting α as an indicator of instability, we find that it often decreases before major crashes, signaling fattening tails and an increased likelihood of extreme events, much like growing correlations near a critical point in a phase transition. This behavior is evident for the dot-com bubble and the 2008 financial crisis. The COVID-19 crash, however, behaves differently: α drops only during the crash itself, reflecting the fact that it was triggered by an external shock rather than an endogenous market bubble.</p>
+<p>Overall, this analysis supports the view that some financial crashes can be interpreted as critical phenomena, where markets become strongly correlated and extreme events dominate, strengthening the analogy between market dynamics and phase transitions in physical systems.</p>
+<p>For a more in-depth discussion, refer to this <a href="kiize.github.io/Market_crashes/tex/main.pdf">pdf</a></p>
 
 
 

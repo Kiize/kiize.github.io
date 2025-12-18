@@ -28,4 +28,4 @@ Finally, we investigate the approach to market crashes by computing a rolling ta
 
 Overall, this analysis supports the view that some financial crashes can be interpreted as critical phenomena, where markets become strongly correlated and extreme events dominate, strengthening the analogy between market dynamics and phase transitions in physical systems.
 
-For a more in-depth discussion, refer to this [pdf](kiize.github.io/Market_crashes/tex/main.pdf)
+For a more in-depth discussion, refer to this [pdf](https://kiize.github.io/Market_crashes/tex/main.pdf).

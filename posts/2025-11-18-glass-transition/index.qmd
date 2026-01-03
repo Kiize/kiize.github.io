@@ -4,7 +4,7 @@ author: "Kiize"
 date: 2025-11-18
 ---
 
-In this article, we study the glass transition using the Frederickson Anderson (FA) model, a simple yet powerful example of a kinetically constrained model that captures the essential features of glassy dynamics. By supercooling a liquid below its freezing point, one can obtain a glass, a solid far from equilibrium that does not relax on experimentally relevant time scales. Although a characteristic temperature $T_g$ is often introduced, the glass transition is not a true phase transition and no discontinuity appears in thermodynamic observables.
+We want to study the glass transition using the Frederickson Anderson (FA) model, a simple yet powerful example of a kinetically constrained model that captures the essential features of glassy dynamics. By supercooling a liquid below its freezing point, one can obtain a glass, a solid far from equilibrium that does not relax on experimentally relevant time scales. Although a characteristic temperature $T_g$ is often introduced, the glass transition is not a true phase transition and no discontinuity appears in thermodynamic observables.
 
 The FA model is defined on a two dimensional $L \times L$ lattice, where each site can be either mobile or immobile. We denote these states by a binary variable $n_i \in {0,1}$, where $n_i = 1$ represents a mobile low density region and $n_i = 0$ a less mobile high density one. The energy of the system is simply
 

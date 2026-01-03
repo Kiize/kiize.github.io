@@ -2,11 +2,17 @@
   {
     "listing": "/posts/index.html",
     "items": [
-      "/posts/2025-11-08-qchaos/index.html",
       "/posts/2025-12-16-market-crashes/index.html",
-      "/posts/2025-0905-restart-waybar/index.html",
-      "/posts/2025-08-22-exceed-audio/index.html",
-      "/posts/2025-08-21-Sioyek-rebuild/index.html"
+      "/posts/2025-11-18-glass-transition/index.html",
+      "/posts/2025-11-08-qchaos/index.html"
+    ]
+  },
+  {
+    "listing": "/gists/index.html",
+    "items": [
+      "/gists/2025-0905-restart-waybar/index.html",
+      "/gists/2025-08-22-exceed-audio/index.html",
+      "/gists/2025-08-21-Sioyek-rebuild/index.html"
     ]
   }
 ]

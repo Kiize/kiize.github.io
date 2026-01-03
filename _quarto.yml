@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs  
+  resources: "*.png"
 
 website:
   title: "Kiize's personal page"
@@ -11,7 +12,9 @@ website:
       - href: about.qmd
         text: About
       - href: posts/index.qmd
-        text: Blog
+        text: Projects
+      - href: gists/index.qmd
+        text: Gists
 
 format:
   html:

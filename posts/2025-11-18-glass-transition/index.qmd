@@ -2,6 +2,7 @@
 title: "Glass transition"
 author: "Kiize"
 date: 2025-11-18
+image: rel_time_vs_temp_log.png
 ---
 
 We want to study the glass transition using the Frederickson Anderson (FA) model, a simple yet powerful example of a kinetically constrained model that captures the essential features of glassy dynamics. By supercooling a liquid below its freezing point, one can obtain a glass, a solid far from equilibrium that does not relax on experimentally relevant time scales. Although a characteristic temperature $T_g$ is often introduced, the glass transition is not a true phase transition and no discontinuity appears in thermodynamic observables.

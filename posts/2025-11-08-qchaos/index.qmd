@@ -2,6 +2,7 @@
 title: "Quantum Chaos"
 author: "Kiize"
 date: 2025-11-08
+image: rect_eigenstate_k3920_ik1.png
 ---
 We want to understand quantum chaos, where chaos manifest itself in the statistical properties of our system.
 To do this, we will study a quantum system whose classical counterpart is chaotic: the quantum billiard. You can click [here](https://kiize.github.io/Quantum_Chaos/tex/qchaos.pdf) to view the pdf version of this work.

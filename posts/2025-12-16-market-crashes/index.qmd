@@ -2,6 +2,7 @@
 title: "Market crashes"
 author: "Kiize"
 date: 2025-12-16
+image: rolling_tail_exponent.png
 ---
 
 Financial markets are often described as complex systems, and major crashes are sometimes compared to critical points in physics. In this article, we explore this analogy by analyzing the log returns of the S&P 500 index, focusing on the crashes of 2000, 2008, and 2020, and asking whether market instability can be understood as a kind of phase transition.

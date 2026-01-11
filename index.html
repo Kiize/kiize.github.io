@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -318,8 +347,34 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This is my personal page built with <a href="https://quarto.org/docs/websites">Quarto</a>.</p>
 <p>In <a href="./about.html">About</a> you can find more informations about me, in <a href="./posts/index.html">Projects</a> you can discover what I am working on and in <a href="./gists/index.html">Gists</a> some linux commands I find useful.</p>
+<p>Curious about what am I working on? This is a summary of my projects.</p>
+<section id="entanglement-phase-transitions" class="level1">
+<h1>Entanglement phase transitions</h1>
+<p>In my Master’s thesis, I studied how local quantum measurements affect entanglement growth in one-dimensional fermionic systems.</p>
+<p><img src="images/measure_chain.png" class="img-fluid"></p>
+<p>I developed a numerical framework based on stochastic Schrödinger equations and Gaussian-state formalism to simulate monitored fermionic chains. By introducing the measurement density <span class="math inline">\(\rho\)</span> as an additional control parameter, I mapped the phase diagram of entanglement scaling and identified volume-law, logarithmic, and area-law regimes, extending known results beyond uniform monitoring.</p>
+<p><img src="images/central_charge_heatmap.png" class="img-fluid"></p>
+</section>
+<section id="market-crashes-as-critical-phenomena" class="level1">
+<h1>Market crashes as critical phenomena</h1>
+<p>I studied financial market crashes using tools from statistical physics, analyzing the log-returns of the S&amp;P 500 index around the 2000, 2008, and 2020 crises.</p>
+<p><img src="posts/2025-12-16-market-crashes/hist_log_ret_SP500.png" class="img-fluid"></p>
+<p>By characterizing return distributions, correlations, and volatility, I showed that market dynamics strongly deviate from Gaussian behavior and exhibit fat-tailed statistics. Using a rolling power-law analysis of return tails, I interpreted market crashes as critical-like regimes where correlations grow and extreme events become more likely, highlighting similarities between financial instability and phase transitions in physical systems.</p>
+<p><img src="posts/2025-12-16-market-crashes/rolling_tail_exponent.png" class="img-fluid"></p>
+</section>
+<section id="quantum-chaos-in-billiard-systems" class="level1">
+<h1>Quantum Chaos in Billiard Systems</h1>
+<p>I studied quantum chaos through the spectral properties of quantum billiards, focusing on the transition from integrable to chaotic behavior. I implemented numerical solvers for the Helmholtz equation using both finite-difference methods and the Expansion Method, validating the approach on a rectangular billiard and extending it to the Bunimovich stadium. By unfolding the energy spectrum and analyzing level-spacing statistics, I investigated the signatures of chaos predicted by random matrix theory.</p>
+<p><img src="posts/2025-11-08-qchaos/rect_eigenstate_k3920_ik1.png" class="img-fluid"></p>
+</section>
+<section id="glass-transition" class="level1">
+<h1>Glass transition</h1>
+<p>I investigated glassy dynamics using the two-dimensional FA Kinetically Constrained Model, implementing a Metropolis Monte Carlo simulation from scratch.</p>
+<p><img src="posts/2025-11-18-glass-transition/rel_time_vs_temp_log.png" class="img-fluid"></p>
+<p>By studying the concentration of mobile regions, autocorrelation functions, and relaxation times across temperatures, I showBy studying the concentration of mobile regions, autocorrelation functions, and relaxation times across temperatures, I showed that the system does not undergo a true thermodynamic phase transition but exhibits a crossover from Arrhenius to super-Arrhenius behavior. At low temperatures, I identified the emergence of dynamic heterogeneity through spatial mobility maps, revealing the coexistence of liquid-like and solid-like regions, a key microscopic signature of glassy dynamics.ed that the system does not undergo a true thermodynamic phase transition but exhibits a crossover from Arrhenius to super-Arrhenius behavior. At low temperatures, I identified the emergence of dynamic heterogeneity through spatial mobility maps, revealing the coexistence of liquid-like and solid-like regions, a key microscopic signature of glassy dynamics.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

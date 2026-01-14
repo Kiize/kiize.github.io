@@ -3,6 +3,11 @@ title: "Overview of flow based MCM"
 author: "Kiize"
 date: 2026-01-13
 bibliography: refs.bib
+filters:
+  - tikz
+tikz:
+  cache: false
+  save-tex: true  # Enable saving intermediate .tex files
 ---
 
 ## Problem
@@ -16,16 +21,21 @@ The paper proposes to use Normalizing Flows, which learn a map $f^{-1}$ ($f$ is 
 ## Real NVP flow
 
 The main idea of this paper is enclosed in this diagram:
-```{tikz}
-\usepackage{tikz-cd}
-\begin{document}
+
+::: {#fig-example}
+```{.tikz}
+%%| additionalPackages: \usepackage{tikz-cd}
+
+
 \begin{tikzcd}
 z \arrow[dd] &  & \phi \arrow[ll, "f"'] \arrow[dd] \\
              &  &                                  \\
 r \arrow[rr] &  & \tilde{p}_f                     
 \end{tikzcd}
-\end{document}
+
 ```
+:::
+
 where $z$ are samples drawn from a simple (prior) distribution $r$: then $f^{-1}$ is a change of variables allowing us to sample $\phi$ according to the new distribution $\tilde{p}_{f}$, which is close to the effective, physical, distribution
 $$
 p(\phi) = \frac{e^{ -S(\phi) }}{Z}.

@@ -1,15 +1,5 @@
 ---
 title: "kiize.github.io"
-about:
-  template: jolla
-  image: cv.jpg
-  links:
-    - icon: linkedin
-      text: Linkedin
-      href: https://www.linkedin.com/in/vito-gallo/
-    - icon: github
-      text: Github
-      href: https://github.com/Kiize
 ---
 
 This is my personal page built with [Quarto](https://quarto.org/docs/websites).

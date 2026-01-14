@@ -109,14 +109,14 @@
     "href": "writeups/flow_based_MCMC/index.html",
     "title": "Overview of flow based MCM",
     "section": "",
-    "text": "The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC (Albergo_2019?), on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down."
+    "text": "The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC (Albergo, Kanwar, and Shanahan 2019), on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down."
   },
   {
     "objectID": "writeups/flow_based_MCMC/index.html#problem",
     "href": "writeups/flow_based_MCMC/index.html#problem",
     "title": "Overview of flow based MCM",
     "section": "",
-    "text": "The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC (Albergo_2019?), on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down."
+    "text": "The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC (Albergo, Kanwar, and Shanahan 2019), on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down."
   },
   {
     "objectID": "writeups/flow_based_MCMC/index.html#method-and-self-training",
@@ -130,6 +130,6 @@
     "href": "writeups/flow_based_MCMC/index.html#real-nvp-flow",
     "title": "Overview of flow based MCM",
     "section": "Real NVP flow",
-    "text": "Real NVP flow\nThe main idea of this paper is enclosed in this diagram:\n\\usepackage{tikz-cd}\n\\begin{document}\n\\begin{tikzcd}\nz \\arrow[dd] &  & \\phi \\arrow[ll, \"f\"'] \\arrow[dd] \\\\\n             &  &                                  \\\\\nr \\arrow[rr] &  & \\tilde{p}_f                     \n\\end{tikzcd}\n\\end{document}\nwhere \\(z\\) are samples drawn from a simple (prior) distribution \\(r\\): then \\(f^{-1}\\) is a change of variables allowing us to sample \\(\\phi\\) according to the new distribution \\(\\tilde{p}_{f}\\), which is close to the effective, physical, distribution \\[\np(\\phi) = \\frac{e^{ -S(\\phi) }}{Z}.\n\\]\nHaving said that, we construct the map \\(f\\) using the real non-volume-preserving (NVP) flow approach, that is we costruct \\(f\\) by composition of [[affine coupling]] layers \\(\\{g_{i}\\}\\) \\[\nf(\\phi) = g_{1} \\circ g_{2} \\circ \\dots g_{n}(\\phi).\n\\]"
+    "text": "Real NVP flow\nThe main idea of this paper is enclosed in this diagram:\n\n\n\n\n\n\nFigure 1\n\n\n\nwhere \\(z\\) are samples drawn from a simple (prior) distribution \\(r\\): then \\(f^{-1}\\) is a change of variables allowing us to sample \\(\\phi\\) according to the new distribution \\(\\tilde{p}_{f}\\), which is close to the effective, physical, distribution \\[\np(\\phi) = \\frac{e^{ -S(\\phi) }}{Z}.\n\\]\nHaving said that, we construct the map \\(f\\) using the real non-volume-preserving (NVP) flow approach, that is we costruct \\(f\\) by composition of [[affine coupling]] layers \\(\\{g_{i}\\}\\) \\[\nf(\\phi) = g_{1} \\circ g_{2} \\circ \\dots g_{n}(\\phi).\n\\]"
   }
 ]

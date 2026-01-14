@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -311,6 +331,10 @@ window.Quarto = {
     <a class="nav-link" href="../../gists/index.html"> 
 <span class="menu-text">Gists</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../writeups/index.html"> 
+<span class="menu-text">Write ups</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -361,7 +385,7 @@ window.Quarto = {
 
 <section id="problem" class="level2">
 <h2 class="anchored" data-anchor-id="problem">Problem</h2>
-<p>The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref"><strong>Albergo_2019?</strong></a>)</span>, on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down.</p>
+<p>The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref">Albergo, Kanwar, and Shanahan 2019</a>)</span>, on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down.</p>
 </section>
 <section id="method-and-self-training" class="level2">
 <h2 class="anchored" data-anchor-id="method-and-self-training">Method and self-training</h2>
@@ -370,14 +394,16 @@ window.Quarto = {
 <section id="real-nvp-flow" class="level2">
 <h2 class="anchored" data-anchor-id="real-nvp-flow">Real NVP flow</h2>
 <p>The main idea of this paper is enclosed in this diagram:</p>
-<pre class="{tikz}"><code>\usepackage{tikz-cd}
-\begin{document}
-\begin{tikzcd}
-z \arrow[dd] &amp;  &amp; \phi \arrow[ll, "f"'] \arrow[dd] \\
-             &amp;  &amp;                                  \\
-r \arrow[rr] &amp;  &amp; \tilde{p}_f                     
-\end{tikzcd}
-\end{document}</code></pre>
+<div id="fig-example" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/mediabag/4c2b09dc4bec7f5acbf2488922f038d82b4727e9.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
 <p>where <span class="math inline">\(z\)</span> are samples drawn from a simple (prior) distribution <span class="math inline">\(r\)</span>: then <span class="math inline">\(f^{-1}\)</span> is a change of variables allowing us to sample <span class="math inline">\(\phi\)</span> according to the new distribution <span class="math inline">\(\tilde{p}_{f}\)</span>, which is close to the effective, physical, distribution <span class="math display">\[
 p(\phi) = \frac{e^{ -S(\phi) }}{Z}.
 \]</span></p>
@@ -386,9 +412,14 @@ f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi).
 \]</span></p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Albergo_2019" class="csl-entry" role="listitem">
+Albergo, M. S., G. Kanwar, and P. E. Shanahan. 2019. <span>“Flow-Based Generative Models for Markov Chain Monte&nbsp;Carlo in Lattice Field Theory.”</span> <em>Physical Review D</em> 100 (3). <a href="https://doi.org/10.1103/physrevd.100.034515">https://doi.org/10.1103/physrevd.100.034515</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

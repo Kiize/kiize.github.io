@@ -2,42 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/about.html</loc>
-    <lastmod>2026-01-11T18:43:57.183Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.063Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/posts/2025-12-16-market-crashes/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.212Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.093Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/posts/2025-11-08-qchaos/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.211Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.092Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kiize.github.io/kiize.github.io/writeups/index.html</loc>
+    <lastmod>2026-01-14T14:47:25.096Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/gists/2025-08-22-exceed-audio/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.210Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.091Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/gists/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.211Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.091Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.211Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.092Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/gists/2025-0905-restart-waybar/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.211Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.091Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/gists/2025-08-21-Sioyek-rebuild/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.210Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.091Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kiize.github.io/kiize.github.io/writeups/flow_based_MCMC/index.html</loc>
+    <lastmod>2026-01-14T14:47:25.095Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/posts/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.212Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.093Z</lastmod>
   </url>
   <url>
     <loc>https://Kiize.github.io/kiize.github.io/posts/2025-11-18-glass-transition/index.html</loc>
-    <lastmod>2026-01-11T18:43:57.211Z</lastmod>
+    <lastmod>2026-01-14T14:47:25.092Z</lastmod>
   </url>
 </urlset>

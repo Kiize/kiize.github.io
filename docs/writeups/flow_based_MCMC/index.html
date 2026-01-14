@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Kiize">
+<meta name="dcterms.date" content="2026-01-13">
 
-<title>Gists – Kiize’s personal page</title>
+<title>Overview of flow based MCM – Kiize’s personal page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,30 +25,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8e843afbd2066de93d1d7e6c53ca696f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8e843afbd2066de93d1d7e6c53ca696f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -314,7 +285,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Kiize’s personal page</span>
     </a>
   </div>
@@ -325,24 +296,20 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../posts/index.html"> 
+    <a class="nav-link" href="../../posts/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../gists/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../gists/index.html"> 
 <span class="menu-text">Gists</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../writeups/index.html"> 
-<span class="menu-text">Write ups</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -363,14 +330,26 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gists</h1>
+<h1 class="title">Overview of flow based MCM</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kiize </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 13, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -380,94 +359,36 @@ window.Quarto = {
 </header>
 
 
-<section id="linux-gists" class="level1">
-<h1>Linux gists</h1>
-<p>In this section I collect small lines of code which I find helpful in my Linux environment.</p>
-
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref"><strong>Albergo_2019?</strong></a>)</span>, on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down.</p>
+</section>
+<section id="method-and-self-training" class="level2">
+<h2 class="anchored" data-anchor-id="method-and-self-training">Method and self-training</h2>
+<p>The paper proposes to use Normalizing Flows, which learn a map <span class="math inline">\(f^{-1}\)</span> (<span class="math inline">\(f\)</span> is called <em>flow</em>) to evaluate the target distribution <span class="math inline">\(\tilde{p}_{f}\)</span> and use it in the [[Metropolis algorithm]] to sample the true distribution of our system. The main advantage of this approach is the self-training, that is we do not need real data to train the model, but only the action of the system which enters in the (shifted) Kullback-Leibler (KL) divergence, that is the loss that we want to minimize.</p>
+</section>
+<section id="real-nvp-flow" class="level2">
+<h2 class="anchored" data-anchor-id="real-nvp-flow">Real NVP flow</h2>
+<p>The main idea of this paper is enclosed in this diagram:</p>
+<pre class="{tikz}"><code>\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+z \arrow[dd] &amp;  &amp; \phi \arrow[ll, "f"'] \arrow[dd] \\
+             &amp;  &amp;                                  \\
+r \arrow[rr] &amp;  &amp; \tilde{p}_f                     
+\end{tikzcd}
+\end{document}</code></pre>
+<p>where <span class="math inline">\(z\)</span> are samples drawn from a simple (prior) distribution <span class="math inline">\(r\)</span>: then <span class="math inline">\(f^{-1}\)</span> is a change of variables allowing us to sample <span class="math inline">\(\phi\)</span> according to the new distribution <span class="math inline">\(\tilde{p}_{f}\)</span>, which is close to the effective, physical, distribution <span class="math display">\[
+p(\phi) = \frac{e^{ -S(\phi) }}{Z}.
+\]</span></p>
+<p>Having said that, we construct the map <span class="math inline">\(f\)</span> using the real non-volume-preserving (NVP) flow approach, that is we costruct <span class="math inline">\(f\)</span> by composition of [[affine coupling]] layers <span class="math inline">\(\{g_{i}\}\)</span> <span class="math display">\[
+f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi).
+\]</span></p>
 
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1757023200000" data-listing-file-modified-sort="1767463227314" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
-<div class="thumbnail"><a href="../gists/2025-0905-restart-waybar/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../gists/2025-0905-restart-waybar/index.html" class="no-external">Waybar restart</a>
-</h3>
-<div class="delink listing-description"><a href="../gists/2025-0905-restart-waybar/index.html" class="no-external">
-When you change the waybar config file you have to restart waybar to see the changes. <!--more-->
-</a></div>
-</div>
-<div class="metadata">
-<a href="../gists/2025-0905-restart-waybar/index.html" class="no-external">
-<div class="listing-date">
-Sep 5, 2025
-</div>
-<div class="listing-author">
-Kiize
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1755813600000" data-listing-file-modified-sort="1764690613472" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
-<div class="thumbnail"><a href="../gists/2025-08-22-exceed-audio/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../gists/2025-08-22-exceed-audio/index.html" class="no-external">Exceed 100% Audio in Arch</a>
-</h3>
-<div class="delink listing-description"><a href="../gists/2025-08-22-exceed-audio/index.html" class="no-external">
-Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:
-</a></div>
-</div>
-<div class="metadata">
-<a href="../gists/2025-08-22-exceed-audio/index.html" class="no-external">
-<div class="listing-date">
-Aug 22, 2025
-</div>
-<div class="listing-author">
-Kiize
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1755727200000" data-listing-file-modified-sort="1764694306867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail"><a href="../gists/2025-08-21-Sioyek-rebuild/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../gists/2025-08-21-Sioyek-rebuild/index.html" class="no-external">Sioyek Rebuild</a>
-</h3>
-<div class="delink listing-description"><a href="../gists/2025-08-21-Sioyek-rebuild/index.html" class="no-external">
-In yay or paru, after you upgrade a package, it is up to you to rebuild it when needed. This is the case for sioyek.
-</a></div>
-</div>
-<div class="metadata">
-<a href="../gists/2025-08-21-Sioyek-rebuild/index.html" class="no-external">
-<div class="listing-date">
-Aug 21, 2025
-</div>
-<div class="listing-author">
-Kiize
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

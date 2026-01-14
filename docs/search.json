@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "kiize.github.io",
     "section": "",
-    "text": "This is my personal page built with Quarto.\nIn About you can find more informations about me, in Projects you can discover what I am working on and in Gists some linux commands I find useful.\nCurious about what am I working on? This is a summary of my projects.\n\nEntanglement phase transitions\nIn my Master’s thesis, I studied how local quantum measurements affect entanglement growth in one-dimensional fermionic systems.\n\nI developed a numerical framework based on stochastic Schrödinger equations and Gaussian-state formalism to simulate monitored fermionic chains. By introducing the measurement density \\(\\rho\\) as an additional control parameter, I mapped the phase diagram of entanglement scaling and identified volume-law, logarithmic, and area-law regimes, extending known results beyond uniform monitoring.\n\n\n\nMarket crashes as critical phenomena\nI studied financial market crashes using tools from statistical physics, analyzing the log-returns of the S&P 500 index around the 2000, 2008, and 2020 crises.\n\nBy characterizing return distributions, correlations, and volatility, I showed that market dynamics strongly deviate from Gaussian behavior and exhibit fat-tailed statistics. Using a rolling power-law analysis of return tails, I interpreted market crashes as critical-like regimes where correlations grow and extreme events become more likely, highlighting similarities between financial instability and phase transitions in physical systems.\n\n\n\nQuantum Chaos in Billiard Systems\nI studied quantum chaos through the spectral properties of quantum billiards, focusing on the transition from integrable to chaotic behavior. I implemented numerical solvers for the Helmholtz equation using both finite-difference methods and the Expansion Method, validating the approach on a rectangular billiard and extending it to the Bunimovich stadium. By unfolding the energy spectrum and analyzing level-spacing statistics, I investigated the signatures of chaos predicted by random matrix theory.\n\n\n\nGlass transition\nI investigated glassy dynamics using the two-dimensional FA Kinetically Constrained Model, implementing a Metropolis Monte Carlo simulation from scratch.\n\nBy studying the concentration of mobile regions, autocorrelation functions, and relaxation times across temperatures, I showBy studying the concentration of mobile regions, autocorrelation functions, and relaxation times across temperatures, I showed that the system does not undergo a true thermodynamic phase transition but exhibits a crossover from Arrhenius to super-Arrhenius behavior. At low temperatures, I identified the emergence of dynamic heterogeneity through spatial mobility maps, revealing the coexistence of liquid-like and solid-like regions, a key microscopic signature of glassy dynamics.ed that the system does not undergo a true thermodynamic phase transition but exhibits a crossover from Arrhenius to super-Arrhenius behavior. At low temperatures, I identified the emergence of dynamic heterogeneity through spatial mobility maps, revealing the coexistence of liquid-like and solid-like regions, a key microscopic signature of glassy dynamics."
+    "text": "This is my personal page built with Quarto.\nIn About you can find more informations about me, in Projects you can discover what I am working on and in Gists some linux commands I find useful. Finally in Write Ups you can find a detailed explanation on some projects where I break down the problem, the methodology and the idea behind the code I have written.\nCurious about what am I working on? This is a summary of my projects.\n\nEntanglement phase transitions\nIn my Master’s thesis, I studied how local quantum measurements affect entanglement growth in one-dimensional fermionic systems.\n\nI developed a numerical framework based on stochastic Schrödinger equations and Gaussian-state formalism to simulate monitored fermionic chains. By introducing the measurement density \\(\\rho\\) as an additional control parameter, I mapped the phase diagram of entanglement scaling and identified volume-law, logarithmic, and area-law regimes, extending known results beyond uniform monitoring.\n\n\n\nMarket crashes as critical phenomena\nI studied financial market crashes using tools from statistical physics, analyzing the log-returns of the S&P 500 index around the 2000, 2008, and 2020 crises.\n\nBy characterizing return distributions, correlations, and volatility, I showed that market dynamics strongly deviate from Gaussian behavior and exhibit fat-tailed statistics. Using a rolling power-law analysis of return tails, I interpreted market crashes as critical-like regimes where correlations grow and extreme events become more likely, highlighting similarities between financial instability and phase transitions in physical systems.\n\n\n\nQuantum Chaos in Billiard Systems\nI studied quantum chaos through the spectral properties of quantum billiards, focusing on the transition from integrable to chaotic behavior. I implemented numerical solvers for the Helmholtz equation using both finite-difference methods and the Expansion Method, validating the approach on a rectangular billiard and extending it to the Bunimovich stadium. By unfolding the energy spectrum and analyzing level-spacing statistics, I investigated the signatures of chaos predicted by random matrix theory.\n\n\n\nGlass transition\nI investigated glassy dynamics using the two-dimensional FA Kinetically Constrained Model, implementing a Metropolis Monte Carlo simulation from scratch.\n\nBy studying the concentration of mobile regions, autocorrelation functions, and relaxation times across temperatures, I showBy studying the concentration of mobile regions, autocorrelation functions, and relaxation times across temperatures, I showed that the system does not undergo a true thermodynamic phase transition but exhibits a crossover from Arrhenius to super-Arrhenius behavior. At low temperatures, I identified the emergence of dynamic heterogeneity through spatial mobility maps, revealing the coexistence of liquid-like and solid-like regions, a key microscopic signature of glassy dynamics.ed that the system does not undergo a true thermodynamic phase transition but exhibits a crossover from Arrhenius to super-Arrhenius behavior. At low temperatures, I identified the emergence of dynamic heterogeneity through spatial mobility maps, revealing the coexistence of liquid-like and solid-like regions, a key microscopic signature of glassy dynamics."
   },
   {
     "objectID": "posts/2025-08-22-exceed-audio/index.html",
@@ -16,14 +16,14 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Vito Gallo",
     "section": "",
     "text": "I am a physicist working in statistical physics and quantum mechanics, often using numerical methods with Python and Julia."
   },
   {
     "objectID": "about.html#contact-me",
     "href": "about.html#contact-me",
-    "title": "About",
+    "title": "Vito Gallo",
     "section": "Contact Me",
     "text": "Contact Me\nContact me by email if you have any questions about my work or if you want to discuss an idea."
   },
@@ -96,5 +96,40 @@
     "title": "Exceed 100% Audio in Arch",
     "section": "",
     "text": "Sometimes in Arch the audio is too low, to exceed the max value and go for example to 150%, we can use this command:\npactl set-sink-volume @DEFAULT_SINK@ 150%"
+  },
+  {
+    "objectID": "writeups/index.html",
+    "href": "writeups/index.html",
+    "title": "Write ups",
+    "section": "",
+    "text": "In this section, I document the process behind my work: the problems I tackle, the methodologies I adopt, and the code I develop.\nThis is written while the projects are in progress to keep track of my insights and provide the building blocks for the final reports, which you can find in Projects.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOverview of flow based MCM\n\n\n\n\n\n\n\n\nJan 13, 2026\n\n\nKiize\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "writeups/flow_based_MCMC/index.html",
+    "href": "writeups/flow_based_MCMC/index.html",
+    "title": "Overview of flow based MCM",
+    "section": "",
+    "text": "The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC (Albergo_2019?), on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down."
+  },
+  {
+    "objectID": "writeups/flow_based_MCMC/index.html#problem",
+    "href": "writeups/flow_based_MCMC/index.html#problem",
+    "title": "Overview of flow based MCM",
+    "section": "",
+    "text": "The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC (Albergo_2019?), on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down."
+  },
+  {
+    "objectID": "writeups/flow_based_MCMC/index.html#method-and-self-training",
+    "href": "writeups/flow_based_MCMC/index.html#method-and-self-training",
+    "title": "Overview of flow based MCM",
+    "section": "Method and self-training",
+    "text": "Method and self-training\nThe paper proposes to use Normalizing Flows, which learn a map \\(f^{-1}\\) (\\(f\\) is called flow) to evaluate the target distribution \\(\\tilde{p}_{f}\\) and use it in the [[Metropolis algorithm]] to sample the true distribution of our system. The main advantage of this approach is the self-training, that is we do not need real data to train the model, but only the action of the system which enters in the (shifted) Kullback-Leibler (KL) divergence, that is the loss that we want to minimize."
+  },
+  {
+    "objectID": "writeups/flow_based_MCMC/index.html#real-nvp-flow",
+    "href": "writeups/flow_based_MCMC/index.html#real-nvp-flow",
+    "title": "Overview of flow based MCM",
+    "section": "Real NVP flow",
+    "text": "Real NVP flow\nThe main idea of this paper is enclosed in this diagram:\n\\usepackage{tikz-cd}\n\\begin{document}\n\\begin{tikzcd}\nz \\arrow[dd] &  & \\phi \\arrow[ll, \"f\"'] \\arrow[dd] \\\\\n             &  &                                  \\\\\nr \\arrow[rr] &  & \\tilde{p}_f                     \n\\end{tikzcd}\n\\end{document}\nwhere \\(z\\) are samples drawn from a simple (prior) distribution \\(r\\): then \\(f^{-1}\\) is a change of variables allowing us to sample \\(\\phi\\) according to the new distribution \\(\\tilde{p}_{f}\\), which is close to the effective, physical, distribution \\[\np(\\phi) = \\frac{e^{ -S(\\phi) }}{Z}.\n\\]\nHaving said that, we construct the map \\(f\\) using the real non-volume-preserving (NVP) flow approach, that is we costruct \\(f\\) by composition of [[affine coupling]] layers \\(\\{g_{i}\\}\\) \\[\nf(\\phi) = g_{1} \\circ g_{2} \\circ \\dots g_{n}(\\phi).\n\\]"
   }
 ]

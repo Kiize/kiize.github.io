@@ -1,10 +1,20 @@
 ---
 title: "kiize.github.io"
+about:
+  template: jolla
+  image: cv.jpg
+  links:
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/vito-gallo/
+    - icon: github
+      text: Github
+      href: https://github.com/Kiize
 ---
 
 This is my personal page built with [Quarto](https://quarto.org/docs/websites).
 
-In [About](about.qmd) you can find more informations about me, in [Projects](posts/index.qmd) you can discover what I am working on and in [Gists](gists/index.qmd) some linux commands I find useful.
+In [About](about.qmd) you can find more informations about me, in [Projects](posts/index.qmd) you can discover what I am working on and in [Gists](gists/index.qmd) some linux commands I find useful. Finally in [Write Ups](writeups/index.qmd) you can find a detailed explanation on some projects where I break down the problem, the methodology and the idea behind the code I have written. 
 
 Curious about what am I working on? This is a summary of my projects.
 

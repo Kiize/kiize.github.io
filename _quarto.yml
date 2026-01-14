@@ -15,6 +15,8 @@ website:
         text: Projects
       - href: gists/index.qmd
         text: Gists
+      - href: writeups/index.qmd
+        text: Write ups
 
 format:
   html:

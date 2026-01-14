@@ -1,0 +1,11 @@
+---
+title: "Write ups"
+listing:
+  type: default
+  contents: .
+  sort: "date desc"
+---
+
+In this section, I document the process behind my work: the problems I tackle, the methodologies I adopt, and the code I develop.
+
+This is written **while** the projects are in progress to keep track of my insights and provide the building blocks for the final reports, which you can find in [Projects](../posts/index.qmd).

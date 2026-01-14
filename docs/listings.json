@@ -14,5 +14,11 @@
       "/gists/2025-08-22-exceed-audio/index.html",
       "/gists/2025-08-21-Sioyek-rebuild/index.html"
     ]
+  },
+  {
+    "listing": "/writeups/index.html",
+    "items": [
+      "/writeups/flow_based_MCMC/index.html"
+    ]
   }
 ]

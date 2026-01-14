@@ -35,7 +35,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -309,6 +308,10 @@ window.Quarto = {
     <a class="nav-link" href="./gists/index.html"> 
 <span class="menu-text">Gists</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./writeups/index.html"> 
+<span class="menu-text">Write ups</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -323,30 +326,19 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla">
+  <img src="cv.jpg" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">kiize.github.io</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
   </div>
-  
-
-
-</header>
-
+</header><main class="content" id="quarto-document-content">
 
 <p>This is my personal page built with <a href="https://quarto.org/docs/websites">Quarto</a>.</p>
-<p>In <a href="./about.html">About</a> you can find more informations about me, in <a href="./posts/index.html">Projects</a> you can discover what I am working on and in <a href="./gists/index.html">Gists</a> some linux commands I find useful.</p>
+<p>In <a href="./about.html">About</a> you can find more informations about me, in <a href="./posts/index.html">Projects</a> you can discover what I am working on and in <a href="./gists/index.html">Gists</a> some linux commands I find useful. Finally in <a href="./writeups/index.html">Write Ups</a> you can find a detailed explanation on some projects where I break down the problem, the methodology and the idea behind the code I have written.</p>
 <p>Curious about what am I working on? This is a summary of my projects.</p>
 <section id="entanglement-phase-transitions" class="level1">
 <h1>Entanglement phase transitions</h1>
@@ -375,8 +367,20 @@ window.Quarto = {
 
 
 </section>
-
-</main> <!-- /main -->
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://www.linkedin.com/in/vito-gallo/" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">Linkedin</span>
+  </a>
+  <a href="https://github.com/Kiize" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -392,13 +396,6 @@ window.Quarto = {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

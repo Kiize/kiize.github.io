@@ -1,6 +1,16 @@
 ---
-title: "About"
+title: "Vito Gallo"
 format: html
+about:
+  template: jolla
+  image: cv.jpg
+  links:
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/vito-gallo/
+    - icon: github
+      text: Github
+      href: https://github.com/Kiize
 ---
 
 I am a physicist working in statistical physics and quantum mechanics, often using numerical methods with Python and Julia.

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kiize">
-<meta name="dcterms.date" content="2026-01-13">
+<meta name="dcterms.date" content="2026-01-19">
 
-<title>Overview of flow based MCM – Kiize’s personal page</title>
+<title>Quartic field theory – Kiize’s personal page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +22,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -59,9 +74,9 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -354,7 +369,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Overview of flow based MCM</h1>
+<h1 class="title">Quartic field theory</h1>
 </div>
 
 
@@ -371,7 +386,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 13, 2026</p>
+      <p class="date">January 19, 2026</p>
     </div>
   </div>
   
@@ -383,43 +398,128 @@ window.Quarto = {
 </header>
 
 
-<section id="problem" class="level2">
-<h2 class="anchored" data-anchor-id="problem">Problem</h2>
-<p>The MCMC method suffers from Critical Slowing Down, that is near the critical point physical simulations become really time-expensive. This is due to the local nature of the method and the high auto-correlations between sites near the critical point; the flow based MCMC <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref">Albergo, Kanwar, and Shanahan 2019</a>)</span>, on the other hand, samples a global configuration at every markovian time step, so it can generate improved auto-correlations and does not suffer from critical slowing down.</p>
-</section>
-<section id="method-and-self-training" class="level2">
-<h2 class="anchored" data-anchor-id="method-and-self-training">Method and self-training</h2>
-<p>The paper proposes to use Normalizing Flows, which learn a map <span class="math inline">\(f^{-1}\)</span> (<span class="math inline">\(f\)</span> is called <em>flow</em>) to evaluate the target distribution <span class="math inline">\(\tilde{p}_{f}\)</span> and use it in the [[Metropolis algorithm]] to sample the true distribution of our system. The main advantage of this approach is the self-training, that is we do not need real data to train the model, but only the action of the system which enters in the (shifted) Kullback-Leibler (KL) divergence, that is the loss that we want to minimize.</p>
-</section>
-<section id="real-nvp-flow" class="level2">
-<h2 class="anchored" data-anchor-id="real-nvp-flow">Real NVP flow</h2>
-<p>The main idea of this paper is enclosed in this diagram:</p>
-<div id="fig-example" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/mediabag/4c2b09dc4bec7f5acbf2488922f038d82b4727e9.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
-</figure>
-</div>
-<p>where <span class="math inline">\(z\)</span> are samples drawn from a simple (prior) distribution <span class="math inline">\(r\)</span>: then <span class="math inline">\(f^{-1}\)</span> is a change of variables allowing us to sample <span class="math inline">\(\phi\)</span> according to the new distribution <span class="math inline">\(\tilde{p}_{f}\)</span>, which is close to the effective, physical, distribution <span class="math display">\[
-p(\phi) = \frac{e^{ -S(\phi) }}{Z}.
-\]</span> In our case we will consider a <a href="../../writeups/flow_based_MCMC/quartic_action.html">quartic action</a>.</p>
-<p>Having said that, we construct the map <span class="math inline">\(f\)</span> using the real non-volume-preserving (NVP) flow approach, that is we costruct <span class="math inline">\(f\)</span> by composition of [[affine coupling]] layers <span class="math inline">\(\{g_{i}\}\)</span> <span class="math display">\[
-f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi).
+<section id="quartic-action" class="level2">
+<h2 class="anchored" data-anchor-id="quartic-action">Quartic action</h2>
+<p>The lagrangian for a scalar field with a quartic potential is given by:</p>
+<p><span class="math display">\[
+\mathcal{L}(\phi) = \frac{1}{2} (\partial_{\mu}\phi)^{2} - \frac{1}{2}m^{2}\phi^{2} - \lambda \phi^4, \quad \lambda &gt; 0
 \]</span></p>
-
+<p>so the action reads</p>
+<p><span class="math display">\[
+S[\phi] = \int d^{d}x \, \mathcal{L}(\phi) = \int d^{d}x \left( \frac{1}{2} (\partial_{\mu}\phi)^{2} - \frac{1}{2}m^{2}\phi^{2} - \lambda \phi^4 \right)
+\]</span></p>
+<p>Our objective is to discretize this action on a lattice and implement a flow-based MCMC algorithm to sample field configurations according to the Boltzmann weight <span class="math inline">\(e^{-S[\phi]}\)</span>.</p>
+</section>
+<section id="discretization" class="level2">
+<h2 class="anchored" data-anchor-id="discretization">Discretization</h2>
+<p>To discretize the action we first divide the lagrangian in the kinetic term, which depends on the derivatives of the field, and the potential term, which depends only on the field values. This is useful because the hard part of the discretization is the kinetic term, the potential term is straightforward to discretize.</p>
+<p>We also fix <span class="math inline">\(d = 2\)</span>, that is we work on a two-dimensional lattice.</p>
+<p><span class="math display">\[
+S(\phi) =\int dt\, dx \, \left( \frac{1}{2}(\partial_{\mu} \phi)^{2} - V(\phi)\right).
+\]</span></p>
+<section id="wicks-rotation" class="level3">
+<h3 class="anchored" data-anchor-id="wicks-rotation">Wick’s rotation</h3>
+<p>The first step is to perform the Wick’s rotation <span class="math display">\[
+t \to -i \tau,
+\]</span> that transforms our time into an inverse temperature. In this way we can write the Euclidean action <span class="math display">\[
+S_{E}(\phi) =\int_{0}^\beta d\tau\ \int dx \, \left( \frac{1}{2}(\partial_{\tau} \phi \partial_{\tau} \phi + \partial_{x} \phi\partial_{x} \phi) + V(\phi)\right).
+\]</span></p>
+</section>
+<section id="integration-by-parts" class="level3">
+<h3 class="anchored" data-anchor-id="integration-by-parts">Integration by parts</h3>
+<p>Another useful trick is to integrate by part to transform the first derivatives into second one: <span class="math display">\[
+\int_{\Omega}(\partial \phi)^{2} \to (\phi \partial \phi)_{\partial\Omega}-\int_{\Omega}\phi \,\partial^{2} \phi,
+\]</span> For the spatial case, we are considering an infinite volume <span class="math inline">\(\Omega_{S}\)</span>, that is it has no boundary <span class="math inline">\(\partial\Omega_{S} = 0\)</span>, so we have <span class="math display">\[
+\int_{\Omega_{S}}dx\,(\partial_{x} \phi)^{2} \to -\int_{\Omega_{S}}\phi \,\partial_{x}^{2} \phi.
+\]</span> For the temporal case, instead, we recall that the boundary conditions for the Euclidean action are <span class="math display">\[
+\phi(0) = \phi(\beta),
+\]</span> that is, in this case too, there are no terms due to the boundaries <span class="math display">\[
+\int_{0}^\beta d\tau\,(\partial_{\tau} \phi)^{2} \to -\int_{0}^\beta d\tau\, \phi \,\partial_{\tau}^{2} \phi.
+\]</span></p>
+</section>
+<section id="potential-term" class="level3">
+<h3 class="anchored" data-anchor-id="potential-term">Potential term</h3>
+<p>As the potential <span class="math inline">\(V(\phi)\)</span> depends only on the field, its discretization is quite easy, we just have to define the lattice.</p>
+<p>Suppose we discretize the temporal axis with steps <span class="math inline">\(\Delta t\)</span>, so that <span class="math display">\[
+t = n \Delta t, \quad n \in \mathbb{N},
+\]</span> and we discretize the spatial axis with steps <span class="math inline">\(\Delta x\)</span>, so that <span class="math display">\[
+x = j\Delta x, \quad j \in \mathbb{N}.
+\]</span> Then the discretization of the potential is just <span class="math display">\[
+V(\phi(x, \tau)) \to V(\phi_{j}^n),
+\]</span> where we use the subscript <span class="math inline">\(j\)</span> to indicate the spatial index and the superscript <span class="math inline">\(n\)</span> to indicate the temporal one.</p>
+</section>
+<section id="kinetic-term" class="level3">
+<h3 class="anchored" data-anchor-id="kinetic-term">Kinetic term</h3>
+<p>The discretization of the kinetic term requires more attention due to the presence of the derivatives.</p>
+<p>The key idea is that, having used the integration by parts, the second derivative simplifies our calculations as it preserves the parity simmetry <span class="math inline">\(x \to -x, \tau \to -\tau\)</span>, in fact we can write the discretized second derivative as <span class="math display">\[
+\partial_{x}^{2}\phi \to \frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}}
+\]</span> and in the same way for the temporal case.</p>
+<p>We then have that <span class="math display">\[
+\phi\partial_{x}^{2}\phi \to \phi_{j}\frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}},
+\]</span> while the measure is discretized as follows <span class="math display">\[
+\int d\tau\, dx \to \sum_{j, n} \Delta t \Delta x.
+\]</span> Then putting all together, for example for the spatial case, we have <span class="math display">\[
+\int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{x}^{2}\phi \to  \sum_{j, n} \Delta t \Delta x \frac{1}{2} \phi_{j}\frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}},
+\]</span> which we can rewrite, using the fact that we are summing over the <span class="math inline">\(j\)</span> index, as <span class="math display">\[
+\int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{x}^{2}\phi \to  \sum_{j, n}  \frac{\Delta t}{\Delta x} \frac{1}{2} (2\phi_{j+1}\phi_{j} - 2 \phi_{j}^{2}).
+\]</span> We can do the same for the temporal case <span class="math display">\[
+\int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{\tau}^{2}\phi \to  \sum_{j, n} \frac{\Delta x}{\Delta t} \frac{1}{2} (2\phi^{n+1}\phi^n - 2 (\phi^{n})^{2}).
+\]</span> We have omitted the other indices for both case for simplicity.</p>
+<p>The final form for the discretized action will then be <span class="math display">\[
+S_{E}(\phi) = \sum_{j, n}\left[ -\frac{\Delta x}{\Delta t} (\phi^{n+1}_{j}\phi_{j}^n -  (\phi_{j}^{n})^{2}) - \frac{\Delta t}{\Delta x} (\phi_{j+1}^n\phi_{j}^n -  (\phi_{j}^{n})^{2}) + \Delta t \Delta x V(\phi_j^n)  \right]
+\]</span></p>
+</section>
+</section>
+<section id="code-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="code-implementation">Code Implementation</h2>
+<p>In our numerical case we set <span class="math inline">\(\Delta x = \Delta t = 1\)</span> and we work with a quartic potential, so the action takes the form <span class="math display">\[
+S_{E}(\phi) = \sum_{j, n}\left[ ((\phi_{j}^{n})^{2} - \phi^{n+1}_{j}\phi_{j}^n ) + ((\phi_{j}^{n})^{2} - \phi_{j+1}^n\phi_{j}^n) + \frac{m^{2}}{2}(\phi_j^n)^{2} + \lambda (\phi_j^n)^{4} \right]
+\]</span> which we can rewrite as <span class="math display">\[
+S_{E}(\phi) = \sum_{j, n} \left[ - (\phi^{n+1}_{j}\phi_{j}^n + \phi_{j+1}^n\phi_{j}^n) +\frac{(m^{2} + 4)}{2}(\phi_j^n)^{2} + \lambda (\phi_j^n)^{4} \right]
+\]</span> or as <span class="math display">\[
+S_{E}(\phi) = \sum_{x} \left[ -\sum_{\mu}\phi_{x}\phi_{x +\mu} + \frac{m^{2} + 4}{2}\phi_{x}^{2} + \lambda \phi_{x}^{4}  \right].
+\]</span></p>
+<p>Given now the field <span class="math inline">\(\phi\)</span> which in python (jax) takes the form <code>(batch, L, L)</code> and the parameters <span class="math inline">\(m^2, \lambda\)</span> which are given as input in <code>action_param = m_sq, lam</code> we can define the following function.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Differences with the paper
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the paper they used <span class="math inline">\(m^2 + 4\)</span> instead of <span class="math inline">\(\frac12(m^2 + 4)\)</span>. This factor does not influence the physics of the system, though.</p>
+</div>
+</div>
+</div>
+<p>The kinetic term is evaluated using the <code>jnp.roll</code> function, recalling that the first axis is the <code>batch</code> axis.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_action(phi, action_param):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    phi: (batch, L, L)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    action_param: [m_sq, lam]</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    m_sq, lam <span class="op">=</span> action_param</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    phi_sq <span class="op">=</span> jnp.square(phi)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We have a factor 1/2 discrepancy with the paper.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    potential <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> (m_sq <span class="op">+</span> <span class="fl">4.0</span>) <span class="op">*</span> phi_sq <span class="op">+</span> lam <span class="op">*</span> jnp.square(phi_sq)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Hopping term.</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    hopping <span class="op">=</span> phi <span class="op">*</span> (jnp.roll(phi, <span class="op">-</span><span class="dv">1</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="op">+</span> jnp.roll(phi, <span class="op">-</span><span class="dv">1</span>, axis<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    action <span class="op">=</span> jnp.<span class="bu">sum</span>(potential <span class="op">-</span> hopping, axis<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> action</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Albergo_2019" class="csl-entry" role="listitem">
-Albergo, M. S., G. Kanwar, and P. E. Shanahan. 2019. <span>“Flow-Based Generative Models for Markov Chain Monte&nbsp;Carlo in Lattice Field Theory.”</span> <em>Physical Review D</em> 100 (3). <a href="https://doi.org/10.1103/physrevd.100.034515">https://doi.org/10.1103/physrevd.100.034515</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

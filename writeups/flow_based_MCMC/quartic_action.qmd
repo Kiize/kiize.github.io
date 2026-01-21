@@ -1,0 +1,162 @@
+---
+title: "Quartic field theory"
+author: "Kiize"
+date: 2026-01-19
+---
+
+## Quartic action
+
+The lagrangian for a scalar field with a quartic potential is given by:
+
+$$
+\mathcal{L}(\phi) = \frac{1}{2} (\partial_{\mu}\phi)^{2} - \frac{1}{2}m^{2}\phi^{2} - \lambda \phi^4, \quad \lambda > 0
+$$
+
+so the action reads
+
+$$
+S[\phi] = \int d^{d}x \, \mathcal{L}(\phi) = \int d^{d}x \left( \frac{1}{2} (\partial_{\mu}\phi)^{2} - \frac{1}{2}m^{2}\phi^{2} - \lambda \phi^4 \right)
+$$
+
+Our objective is to discretize this action on a lattice and implement a flow-based MCMC algorithm to sample field configurations according to the Boltzmann weight $e^{-S[\phi]}$.
+
+
+## Discretization
+
+To discretize the action we first divide the lagrangian in the kinetic term, which depends on the derivatives of the field, and the potential term, which depends only on the field values. This is useful because the hard part of the discretization is the kinetic term, the potential term is straightforward to discretize.
+
+We also fix $d = 2$, that is we work on a two-dimensional lattice.
+
+$$
+S(\phi) =\int dt\, dx \, \left( \frac{1}{2}(\partial_{\mu} \phi)^{2} - V(\phi)\right).
+$$
+
+### Wick's rotation
+
+The first step is to perform the Wick's rotation
+$$
+t \to -i \tau,
+$$
+that transforms our time into an inverse temperature. In this way we can write the Euclidean action 
+$$
+S_{E}(\phi) =\int_{0}^\beta d\tau\ \int dx \, \left( \frac{1}{2}(\partial_{\tau} \phi \partial_{\tau} \phi + \partial_{x} \phi\partial_{x} \phi) + V(\phi)\right).
+$$
+
+### Integration by parts
+
+Another useful trick is to integrate by part to transform the first derivatives into second one:
+$$
+\int_{\Omega}(\partial \phi)^{2} \to (\phi \partial \phi)_{\partial\Omega}-\int_{\Omega}\phi \,\partial^{2} \phi,
+$$
+For the spatial case, we are considering an infinite volume $\Omega_{S}$, that is it has no boundary $\partial\Omega_{S} = 0$, so we have
+$$
+\int_{\Omega_{S}}dx\,(\partial_{x} \phi)^{2} \to -\int_{\Omega_{S}}\phi \,\partial_{x}^{2} \phi.
+$$
+For the temporal case, instead, we recall that the boundary conditions for the Euclidean action are
+$$
+\phi(0) = \phi(\beta),
+$$
+that is, in this case too, there are no terms due to the boundaries
+$$
+\int_{0}^\beta d\tau\,(\partial_{\tau} \phi)^{2} \to -\int_{0}^\beta d\tau\, \phi \,\partial_{\tau}^{2} \phi.
+$$
+
+### Potential term
+
+As the potential $V(\phi)$ depends only on the field, its discretization is quite easy, we just have to define the lattice. 
+
+Suppose we discretize the temporal axis with steps $\Delta t$, so that
+$$
+t = n \Delta t, \quad n \in \mathbb{N},
+$$
+and we discretize the spatial axis with steps $\Delta x$, so that
+$$
+x = j\Delta x, \quad j \in \mathbb{N}.
+$$
+Then the discretization of the potential is just
+$$
+V(\phi(x, \tau)) \to V(\phi_{j}^n),
+$$
+where we use the subscript $j$ to indicate the spatial index and the superscript $n$ to indicate the temporal one.
+
+### Kinetic term
+
+The discretization of the kinetic term requires more attention due to the presence of the derivatives.
+
+The key idea is that, having used the integration by parts, the second derivative simplifies our calculations as it preserves the parity simmetry $x \to -x, \tau \to -\tau$, in fact we can write the discretized second derivative as
+$$
+\partial_{x}^{2}\phi \to \frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}}
+$$
+and in the same way for the temporal case.
+
+We then have that
+$$
+\phi\partial_{x}^{2}\phi \to \phi_{j}\frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}},
+$$
+while the measure is discretized as follows
+$$
+\int d\tau\, dx \to \sum_{j, n} \Delta t \Delta x.
+$$
+Then putting all together, for example for the spatial case, we have
+$$
+\int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{x}^{2}\phi \to  \sum_{j, n} \Delta t \Delta x \frac{1}{2} \phi_{j}\frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}},
+$$
+which we can rewrite, using the fact that we are summing over the $j$ index, as
+$$
+\int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{x}^{2}\phi \to  \sum_{j, n}  \frac{\Delta t}{\Delta x} \frac{1}{2} (2\phi_{j+1}\phi_{j} - 2 \phi_{j}^{2}).
+$$
+We can do the same for the temporal case
+$$
+\int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{\tau}^{2}\phi \to  \sum_{j, n} \frac{\Delta x}{\Delta t} \frac{1}{2} (2\phi^{n+1}\phi^n - 2 (\phi^{n})^{2}).
+$$
+We have omitted the other indices for both case for simplicity.
+
+The final form for the discretized action will then be
+$$
+S_{E}(\phi) = \sum_{j, n}\left[ -\frac{\Delta x}{\Delta t} (\phi^{n+1}_{j}\phi_{j}^n -  (\phi_{j}^{n})^{2}) - \frac{\Delta t}{\Delta x} (\phi_{j+1}^n\phi_{j}^n -  (\phi_{j}^{n})^{2}) + \Delta t \Delta x V(\phi_j^n)  \right]
+$$
+
+## Code Implementation
+
+In our numerical case we set $\Delta x = \Delta t = 1$ and we work with a quartic potential, so the action takes the form
+$$
+S_{E}(\phi) = \sum_{j, n}\left[ ((\phi_{j}^{n})^{2} - \phi^{n+1}_{j}\phi_{j}^n ) + ((\phi_{j}^{n})^{2} - \phi_{j+1}^n\phi_{j}^n) + \frac{m^{2}}{2}(\phi_j^n)^{2} + \lambda (\phi_j^n)^{4} \right]
+$$
+which we can rewrite as
+$$
+S_{E}(\phi) = \sum_{j, n} \left[ - (\phi^{n+1}_{j}\phi_{j}^n + \phi_{j+1}^n\phi_{j}^n) +\frac{(m^{2} + 4)}{2}(\phi_j^n)^{2} + \lambda (\phi_j^n)^{4} \right]
+$$
+or as
+$$
+S_{E}(\phi) = \sum_{x} \left[ -\sum_{\mu}\phi_{x}\phi_{x +\mu} + \frac{m^{2} + 4}{2}\phi_{x}^{2} + \lambda \phi_{x}^{4}  \right].
+$$
+
+Given now the field $\phi$ which in python (jax) takes the form ```(batch, L, L)``` and the parameters $m^2, \lambda$ which are given as input in ```action_param = m_sq, lam``` we can define the following function. 
+
+::: {.callout-caution collapse="true"}
+## Differences with the paper
+In the paper they used $m^2 + 4$ instead of $\frac12(m^2 + 4)$. This factor does not influence the physics of the system, though.
+:::
+
+The kinetic term is evaluated using the ```jnp.roll``` function, recalling that the first axis is the ```batch``` axis.
+
+```python
+import jax.numpy as jnp
+
+def calc_action(phi, action_param):
+    """
+    phi: (batch, L, L)
+    action_param: [m_sq, lam]
+    """
+    m_sq, lam = action_param
+    phi_sq = jnp.square(phi)
+    
+    # We have a factor 1/2 discrepancy with the paper.
+    potential = 0.5 * (m_sq + 4.0) * phi_sq + lam * jnp.square(phi_sq)
+    
+    # Hopping term.
+    hopping = phi * (jnp.roll(phi, -1, axis=1) + jnp.roll(phi, -1, axis=2))
+    
+    action = jnp.sum(potential - hopping, axis=(1, 2))
+    return action
+```

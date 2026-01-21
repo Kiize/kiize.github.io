@@ -18,6 +18,8 @@
   {
     "listing": "/writeups/index.html",
     "items": [
+      "/writeups/quartic_action/index.html",
+      "/writeups/flow_based_MCMC/quartic_action.html",
       "/writeups/flow_based_MCMC/index.html"
     ]
   }

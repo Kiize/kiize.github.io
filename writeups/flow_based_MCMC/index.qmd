@@ -40,6 +40,7 @@ where $z$ are samples drawn from a simple (prior) distribution $r$: then $f^{-1}
 $$
 p(\phi) = \frac{e^{ -S(\phi) }}{Z}.
 $$
+In our case we will consider a [quartic action](quartic_action.qmd).
 
 Having said that, we construct the map $f$ using the real non-volume-preserving (NVP) flow approach, that is we costruct $f$ by composition of [[affine coupling]] layers $\{g_{i}\}$
 $$

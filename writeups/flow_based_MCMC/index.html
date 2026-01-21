@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,9 +59,9 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-a8515150ab97b067293ad520a6a68df1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -406,7 +406,7 @@ Figure&nbsp;1
 </div>
 <p>where <span class="math inline">\(z\)</span> are samples drawn from a simple (prior) distribution <span class="math inline">\(r\)</span>: then <span class="math inline">\(f^{-1}\)</span> is a change of variables allowing us to sample <span class="math inline">\(\phi\)</span> according to the new distribution <span class="math inline">\(\tilde{p}_{f}\)</span>, which is close to the effective, physical, distribution <span class="math display">\[
 p(\phi) = \frac{e^{ -S(\phi) }}{Z}.
-\]</span></p>
+\]</span> In our case we will consider a <a href="../../writeups/flow_based_MCMC/quartic_action.html">quartic action</a>.</p>
 <p>Having said that, we construct the map <span class="math inline">\(f\)</span> using the real non-volume-preserving (NVP) flow approach, that is we costruct <span class="math inline">\(f\)</span> by composition of [[affine coupling]] layers <span class="math inline">\(\{g_{i}\}\)</span> <span class="math display">\[
 f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi).
 \]</span></p>

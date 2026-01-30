@@ -38,11 +38,17 @@ r \arrow[rr] &  & \tilde{p}_f
 
 where $z$ are samples drawn from a simple (prior) distribution $r$: then $f^{-1}$ is a change of variables allowing us to sample $\phi$ according to the new distribution $\tilde{p}_{f}$, which is close to the effective, physical, distribution
 $$
-p(\phi) = \frac{e^{ -S(\phi) }}{Z}.
+p(\phi) = \frac{e^{ -S(\phi) }}{Z},
 $$
-In our case we will consider a [quartic action](quartic_action.qmd).
+with $S$ a [quartic action](quartic_action.qmd).
 
-Having said that, we construct the map $f$ using the real non-volume-preserving (NVP) flow approach, that is we costruct $f$ by composition of [[affine coupling]] layers $\{g_{i}\}$
+Having said that, we construct the map $f$ using the real non-volume-preserving (NVP) flow approach, that is we costruct $f$ by composition of [affine coupling](affine_couplings.qmd) layers $\{g_{i}\}$
 $$
 f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi).
 $$
+
+The proposal distribution $\tilde{p}_{f}$ is then given by
+$$
+\tilde{p}_{f}(\phi) = r(f(\phi)) \left|\det \frac{ \partial f(\phi) }{ \partial \phi }  \right|.
+$$
+Affine couplings also solve the problem of computing the jacobian.

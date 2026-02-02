@@ -1,0 +1,48 @@
+---
+title: "Machine Learning for Rare Event Sampling"
+author: "Kiize"
+date: 2026-02-02
+---
+
+Standard Markov chain Monte Carlo (MCMC) methods can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times.
+Recent approaches leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system.
+
+## Discretizing the $\phi^4$ theory
+
+We begin with the Euclidean action for a scalar $\phi^4$ theory in $1 + 1$ dimensions. By performing a Wick rotation to map real time to Euclidean time and discretizing the space-time on a lattice where $\Delta x = \Delta t = 1$, the action takes the following form
+$$
+S_{E}(\phi) = \sum_{x} \left[ -\sum_{\mu}\phi_{x}\phi_{x +\mu} + \frac{m^{2} + 4}{2}\phi_{x}^{2} + \lambda \phi_{x}^{4}  \right].
+$$
+
+## The bottleneck
+
+The traditional Metropolis algorithm updates the field locally. While this ensures detailed balance relative to the target distribution $p(\phi) \propto e^{-S(\phi)}$, its efficiency collapses near criticality. For a lattice size $L = 16$, as the mass squared $m^2$ increases towards the critical point, the integrated autocorrelation time $\tau$ can jump from $34.21$ to over $213$.
+
+## [Flow-based MCMC](../../writeups/flow_based_MCMC/index.qmd)
+
+To address these inefficiencies, we use Normalizing Flows to learn an invertible map $f$ between a simple prior distribution $r$ (such as a Gaussian) and the complex physical distribution.
+
+The map $f$ is constructed by composing [affine coupling layers](../../writeups/flow_based_MCMC/affine_couplings.qmd). By splitting the field into two halves $\phi_a$ and $\phi_b$, the transformation is defined as
+$$
+\begin{cases}
+\phi_{a}  \to \phi_{a}  &\; (\text{one half is invariant})  \\
+\phi_{b} \to z_{b} = \phi_{b} \,\odot \, e^{ s_{i}(\phi_{a}) } + t_{i}(\phi_{a}) & .
+\end{cases}
+$$
+The functions $s_i$ and $t_i$ are parametrized by a Convolutional Neural Network (CNN). CNNs are particularly suited for lattice field theories because they are designed to capture spatial correlations between nearby sites.
+
+## Loss function
+
+The model is trained by minimizing the shifted Kullback-Leibler (KL) divergence:
+$$
+L(\tilde{p}_f) = \int d\phi\, \tilde{p}_f(\phi) \left[ S(\phi) + \log \tilde{p}_f(\phi) \right].
+$$
+A major advantage of this loss function is that it allows for self-training. We do not require "real" training data; the physical action $S(\phi)$ itself guides the model toward the correct distribution.
+
+## Results
+
+The primary strength of the Flow-based MCMC is its ability to propose global configurations at each step. In a test case with $L = 16$ and $m^2 = -3.0$, the flow-based method achieved an autocorrelation time of $\tau = 19.69$ with an acceptance rate of $17%$. As seen in the autocorrelation plots, the flow-based method decorrelates significantly faster than standard MC.
+
+Despite these promising results, limitations remain. Training becomes increasingly unstable for lattice sizes larger than $L = 16$ and the acceptance rate is still low. These points will be the focus of future work.
+
+For a more in-depth discussion, refer to this [pdf](https://kiize.github.io/posts/2026-02-02-flowmcmc/main.pdf).

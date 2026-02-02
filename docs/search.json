@@ -172,6 +172,48 @@
     "href": "writeups/flow_based_MCMC/affine_couplings.html#jacobian",
     "title": "Affine couplings",
     "section": "Jacobian",
-    "text": "Jacobian\nWe have said in Flow Based MCMC that we need to compute the jacobian \\[\n\\left|\\det \\frac{ \\partial f(\\phi) }{ \\partial \\phi }  \\right|.\n\\] Recalling that by definition \\[\nf(\\phi) = g_{1} \\circ g_{2} \\circ \\dots g_{n}(\\phi),\n\\] we have that the final jacobian is just the product of the single jacobian, so our task is to compute \\[\n\\left| \\frac{ \\partial g_{i}(\\phi) }{ \\partial \\phi } \\right|.\n\\] We first notice that half of the coupling is just the identity \\((\\phi_{a}\\to \\phi_{a})\\), so we just need to derive the other mapping which, because we are performing an element wise multiplication, is simply \\[\n\\frac{ \\partial g_{i} }{ \\partial (\\phi_{b})_{j} } = e^{ (s_{i})_{j} }.\n\\] Putting all together, if \\(\\phi\\) can be rearranged in a \\(D\\)-dimensional vector, we have \\[\n\\left| \\frac{ \\partial g_{i}(\\phi) }{ \\partial \\phi } \\right| = \\prod_{j=1}^{D/2} e^{ (s_{i}(\\phi))_{j} }\n\\]"
+    "text": "Jacobian\nWe have said in Flow Based MCMC that we need to compute the jacobian \\[\n\\left|\\det \\frac{ \\partial f(\\phi) }{ \\partial \\phi }  \\right|.\n\\] Recalling that by definition \\[\nf(\\phi) = g_{1} \\circ g_{2} \\circ \\dots g_{n}(\\phi),\n\\] we have that the final jacobian is just the product of the single jacobian, so our task is to compute \\[\n\\left| \\frac{ \\partial g_{i}(\\phi) }{ \\partial \\phi } \\right|.\n\\] We first notice that half of the coupling is just the identity \\((\\phi_{a}\\to \\phi_{a})\\), so we just need to derive the other mapping which, because we are performing an element wise multiplication, is simply \\[\n\\frac{ \\partial g_{i} }{ \\partial (\\phi_{b})_{j} } = e^{ (s_{i})_{j} }.\n\\] Putting all together, if \\(\\phi\\) can be rearranged in a \\(D\\)-dimensional vector, we have \\[\n\\left| \\frac{ \\partial g_{i}(\\phi) }{ \\partial \\phi } \\right| = \\prod_{j=1}^{D/2} e^{ (s_{i}(\\phi))_{j} }\n\\]\ndef coupling_layer_cnn(params, phi, mask, st_net):\n    \"\"\"\n    Parameters\n    ----------\n    params: \n        weights of the st_net CNN for the specific layer.\n    phi: array (batch, L, L)\n        input field configuration\n    mask: array (batch, L, L)\n        binary mask to split the field phi\n    st_net: STNet\n        instance of the STNet class\n\n    Returns\n    -------\n    jnp.squeeze(phi_new, axis=-1): array (batch, L, L)\n        transformed field configuration\n    log_det: array (batch,)\n        log determinant of the Jacobian of the transformation\n    \"\"\"\n\n    # CNNs in flax want another dimension for channels, so we add None to phi and mask.\n    phi_input = phi[..., None] \n    mask_input = mask[..., None]\n    \n    # masked field\n    phi_masked = phi_input * mask_input\n    \n    # CNN applies params to our masked field getting s and t\n    s, t = st_net.apply({'params': params}, phi_masked)\n    \n    # We want to apply the transformation only to half field\n    s = s * (1.0 - mask_input)\n    t = t * (1.0 - mask_input)\n    \n    # Transformation\n    phi_new = phi_input * mask_input + (phi_input * jnp.exp(s) + t) * (1.0 - mask_input)\n    \n    # Log of the determinant of the jacobian is the sum over s\n    log_det = jnp.sum(s, axis=(1, 2, 3))\n\n    # we remove the channel dimension before returning the new field\n    return jnp.squeeze(phi_new, axis=-1), log_det"
+  },
+  {
+    "objectID": "posts/2026-02-02-flowmcmc/index.html",
+    "href": "posts/2026-02-02-flowmcmc/index.html",
+    "title": "Machine Learning for Rare Event Sampling",
+    "section": "",
+    "text": "Standard Markov chain Monte Carlo (MCMC) methods can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system."
+  },
+  {
+    "objectID": "posts/2026-02-02-flowmcmc/index.html#discretizing-the-phi4-theory",
+    "href": "posts/2026-02-02-flowmcmc/index.html#discretizing-the-phi4-theory",
+    "title": "Machine Learning for Rare Event Sampling",
+    "section": "Discretizing the \\(\\phi^4\\) theory",
+    "text": "Discretizing the \\(\\phi^4\\) theory\nWe begin with the Euclidean action for a scalar \\(\\phi^4\\) theory in \\(1 + 1\\) dimensions. By performing a Wick rotation to map real time to Euclidean time and discretizing the space-time on a lattice where \\(\\Delta x = \\Delta t = 1\\), the action takes the following form \\[\nS_{E}(\\phi) = \\sum_{x} \\left[ -\\sum_{\\mu}\\phi_{x}\\phi_{x +\\mu} + \\frac{m^{2} + 4}{2}\\phi_{x}^{2} + \\lambda \\phi_{x}^{4}  \\right].\n\\]"
+  },
+  {
+    "objectID": "posts/2026-02-02-flowmcmc/index.html#the-bottleneck",
+    "href": "posts/2026-02-02-flowmcmc/index.html#the-bottleneck",
+    "title": "Machine Learning for Rare Event Sampling",
+    "section": "The bottleneck",
+    "text": "The bottleneck\nThe traditional Metropolis algorithm updates the field locally. While this ensures detailed balance relative to the target distribution \\(p(\\phi) \\propto e^{-S(\\phi)}\\), its efficiency collapses near criticality. For a lattice size \\(L = 16\\), as the mass squared \\(m^2\\) increases towards the critical point, the integrated autocorrelation time \\(\\tau\\) can jump from \\(34.21\\) to over \\(213\\)."
+  },
+  {
+    "objectID": "posts/2026-02-02-flowmcmc/index.html#flow-based-mcmc",
+    "href": "posts/2026-02-02-flowmcmc/index.html#flow-based-mcmc",
+    "title": "Machine Learning for Rare Event Sampling",
+    "section": "Flow-based MCMC",
+    "text": "Flow-based MCMC\nTo address these inefficiencies, we use Normalizing Flows to learn an invertible map \\(f\\) between a simple prior distribution \\(r\\) (such as a Gaussian) and the complex physical distribution.\nThe map \\(f\\) is constructed by composing affine coupling layers. By splitting the field into two halves \\(\\phi_a\\) and \\(\\phi_b\\), the transformation is defined as \\[\n\\begin{cases}\n\\phi_{a}  \\to \\phi_{a}  &\\; (\\text{one half is invariant})  \\\\\n\\phi_{b} \\to z_{b} = \\phi_{b} \\,\\odot \\, e^{ s_{i}(\\phi_{a}) } + t_{i}(\\phi_{a}) & .\n\\end{cases}\n\\] The functions \\(s_i\\) and \\(t_i\\) are parametrized by a Convolutional Neural Network (CNN). CNNs are particularly suited for lattice field theories because they are designed to capture spatial correlations between nearby sites."
+  },
+  {
+    "objectID": "posts/2026-02-02-flowmcmc/index.html#loss-function",
+    "href": "posts/2026-02-02-flowmcmc/index.html#loss-function",
+    "title": "Machine Learning for Rare Event Sampling",
+    "section": "Loss function",
+    "text": "Loss function\nThe model is trained by minimizing the shifted Kullback-Leibler (KL) divergence: \\[\nL(\\tilde{p}_f) = \\int d\\phi\\, \\tilde{p}_f(\\phi) \\left[ S(\\phi) + \\log \\tilde{p}_f(\\phi) \\right].\n\\] A major advantage of this loss function is that it allows for self-training. We do not require “real” training data; the physical action \\(S(\\phi)\\) itself guides the model toward the correct distribution."
+  },
+  {
+    "objectID": "posts/2026-02-02-flowmcmc/index.html#results",
+    "href": "posts/2026-02-02-flowmcmc/index.html#results",
+    "title": "Machine Learning for Rare Event Sampling",
+    "section": "Results",
+    "text": "Results\nThe primary strength of the Flow-based MCMC is its ability to propose global configurations at each step. In a test case with \\(L = 16\\) and \\(m^2 = -3.0\\), the flow-based method achieved an autocorrelation time of \\(\\tau = 19.69\\) with an acceptance rate of \\(17%\\). As seen in the autocorrelation plots, the flow-based method decorrelates significantly faster than standard MC.\nDespite these promising results, limitations remain. Training becomes increasingly unstable for lattice sizes larger than \\(L = 16\\) and the acceptance rate is still low. These points will be the focus of future work.\nFor a more in-depth discussion, refer to this pdf."
   }
 ]

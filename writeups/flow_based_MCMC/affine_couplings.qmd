@@ -37,3 +37,49 @@ Putting all together, if $\phi$ can be rearranged in a $D$-dimensional vector, w
 $$
 \left| \frac{ \partial g_{i}(\phi) }{ \partial \phi } \right| = \prod_{j=1}^{D/2} e^{ (s_{i}(\phi))_{j} }
 $$
+
+```python
+def coupling_layer_cnn(params, phi, mask, st_net):
+    """
+    Parameters
+    ----------
+    params: 
+        weights of the st_net CNN for the specific layer.
+    phi: array (batch, L, L)
+        input field configuration
+    mask: array (batch, L, L)
+        binary mask to split the field phi
+    st_net: STNet
+        instance of the STNet class
+
+    Returns
+    -------
+    jnp.squeeze(phi_new, axis=-1): array (batch, L, L)
+        transformed field configuration
+    log_det: array (batch,)
+        log determinant of the Jacobian of the transformation
+    """
+
+    # CNNs in flax want another dimension for channels, so we add None to phi and mask.
+    phi_input = phi[..., None] 
+    mask_input = mask[..., None]
+    
+    # masked field
+    phi_masked = phi_input * mask_input
+    
+    # CNN applies params to our masked field getting s and t
+    s, t = st_net.apply({'params': params}, phi_masked)
+    
+    # We want to apply the transformation only to half field
+    s = s * (1.0 - mask_input)
+    t = t * (1.0 - mask_input)
+    
+    # Transformation
+    phi_new = phi_input * mask_input + (phi_input * jnp.exp(s) + t) * (1.0 - mask_input)
+    
+    # Log of the determinant of the jacobian is the sum over s
+    log_det = jnp.sum(s, axis=(1, 2, 3))
+
+    # we remove the channel dimension before returning the new field
+    return jnp.squeeze(phi_new, axis=-1), log_det
+```

@@ -179,7 +179,7 @@
     "href": "posts/2026-02-02-flowmcmc/index.html",
     "title": "Machine Learning for Rare Event Sampling",
     "section": "",
-    "text": "Standard Markov chain Monte Carlo (MCMC) methods can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system."
+    "text": "Standard Markov chain Monte Carlo (MCMC) methods (Itzykson and Drouffe 1989) can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches (Albergo, Kanwar, and Shanahan 2019) leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system."
   },
   {
     "objectID": "posts/2026-02-02-flowmcmc/index.html#discretizing-the-phi4-theory",

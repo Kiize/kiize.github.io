@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -363,7 +383,7 @@ window.Quarto = {
 </header>
 
 
-<p>Standard Markov chain Monte Carlo (MCMC) methods can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system.</p>
+<p>Standard Markov chain Monte Carlo (MCMC) methods <span class="citation" data-cites="Itzykson:1989sx">(<a href="#ref-Itzykson:1989sx" role="doc-biblioref">Itzykson and Drouffe 1989</a>)</span> can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref">Albergo, Kanwar, and Shanahan 2019</a>)</span> leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system.</p>
 <section id="discretizing-the-phi4-theory" class="level2">
 <h2 class="anchored" data-anchor-id="discretizing-the-phi4-theory">Discretizing the <span class="math inline">\(\phi^4\)</span> theory</h2>
 <p>We begin with the Euclidean action for a scalar <span class="math inline">\(\phi^4\)</span> theory in <span class="math inline">\(1 + 1\)</span> dimensions. By performing a Wick rotation to map real time to Euclidean time and discretizing the space-time on a lattice where <span class="math inline">\(\Delta x = \Delta t = 1\)</span>, the action takes the following form <span class="math display">\[
@@ -397,9 +417,17 @@ L(\tilde{p}_f) = \int d\phi\, \tilde{p}_f(\phi) \left[ S(\phi) + \log \tilde{p}_
 <p>For a more in-depth discussion, refer to this <a href="https://kiize.github.io/posts/2026-02-02-flowmcmc/main.pdf">pdf</a>.</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Albergo_2019" class="csl-entry" role="listitem">
+Albergo, M. S., G. Kanwar, and P. E. Shanahan. 2019. <span>“Flow-Based Generative Models for Markov Chain Monte Carlo in Lattice Field Theory.”</span> <em>Physical Review D</em> 100 (3). <a href="https://doi.org/10.1103/physrevd.100.034515">https://doi.org/10.1103/physrevd.100.034515</a>.
+</div>
+<div id="ref-Itzykson:1989sx" class="csl-entry" role="listitem">
+Itzykson, C., and J. M. Drouffe. 1989. <em><span>STATISTICAL FIELD THEORY. VOL. 1: FROM BROWNIAN MOTION TO RENORMALIZATION AND LATTICE GAUGE THEORY</span></em>. Cambridge Monographs on Mathematical Physics. CUP. <a href="https://doi.org/10.1017/CBO9780511622779">https://doi.org/10.1017/CBO9780511622779</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

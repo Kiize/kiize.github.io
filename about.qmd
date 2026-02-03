@@ -17,4 +17,4 @@ I am a physicist working in statistical physics and quantum mechanics, often usi
 
 ## Contact Me
 
-Contact me by [email](vitogallo99@gmail.com) if you have any questions about my work or if you want to discuss an idea.
+Contact me by [email](mailto:vitogallo99@gmail.com) if you have any questions about my work or if you want to discuss an idea.

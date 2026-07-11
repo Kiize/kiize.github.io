@@ -4,6 +4,7 @@ listing:
   type: default
   contents: .
   sort: "date desc"
+  fields: [date, title, reading-time, description]
 ---
 
 In this section, I document the process behind my work: the problems I tackle, the methodologies I adopt, and the code I develop.

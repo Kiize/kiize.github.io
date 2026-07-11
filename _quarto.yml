@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: docs  
   resources: "*.png"
-
 website:
   title: "Kiize's personal page"
   navbar:

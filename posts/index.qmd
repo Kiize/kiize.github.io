@@ -6,6 +6,7 @@ listing:
   sort: "date desc"
   image-align: right
   image-placeholder: thumbnail.png
+  fields: [image, date, title, reading-time, description]
 ---
 
 # Research Projects

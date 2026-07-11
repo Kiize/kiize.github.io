@@ -4,6 +4,7 @@ listing:
   type: default
   contents: .
   sort: "date desc"
+  fields: [date, title, reading-time, description]
 ---
 
 # Linux gists

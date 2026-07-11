@@ -1,5 +1,5 @@
 ---
-title: "Overview of flow based MCM"
+title: "Overview of flow based MCMC"
 author: "Kiize"
 date: 2026-01-13
 bibliography: refs.bib
@@ -42,7 +42,7 @@ p(\phi) = \frac{e^{ -S(\phi) }}{Z},
 $$
 with $S$ a [quartic action](quartic_action.qmd).
 
-Having said that, we construct the map $f$ using the real non-volume-preserving (NVP) flow approach, that is we costruct $f$ by composition of [affine coupling](affine_couplings.qmd) layers $\{g_{i}\}$
+Having said that, we construct the map $f$ using the real non-volume-preserving (NVP) flow approach, that is we construct $f$ by composition of [affine coupling](affine_couplings.qmd) layers $\{g_{i}\}$
 $$
 f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi).
 $$

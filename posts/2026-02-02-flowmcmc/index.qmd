@@ -42,7 +42,7 @@ A major advantage of this loss function is that it allows for self-training. We 
 
 ## Results
 
-The primary strength of the Flow-based MCMC is its ability to propose global configurations at each step. In a test case with $L = 16$ and $m^2 = -3.0$, the flow-based method achieved an autocorrelation time of $\tau = 19.69$ with an acceptance rate of $17%$. As seen in the autocorrelation plots, the flow-based method decorrelates significantly faster than standard MC.
+The primary strength of the Flow-based MCMC is its ability to propose global configurations at each step. In a test case with $L = 16$ and $m^2 = -3.0$, the flow-based method achieved an autocorrelation time of $\tau = 19.69$ with an acceptance rate of $17\%$. As seen in the autocorrelation plots, the flow-based method decorrelates significantly faster than standard MC.
 
 Despite these promising results, limitations remain. Training becomes increasingly unstable for lattice sizes larger than $L = 16$ and the acceptance rate is still low. These points will be the focus of future work.
 

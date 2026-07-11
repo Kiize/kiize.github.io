@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Machine Learning for Rare Event Sampling – Kiize’s personal page</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -26,7 +29,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -54,19 +56,18 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8e843afbd2066de93d1d7e6c53ca696f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-642d9746b13bdefc7cefb5a1b4f53ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-c129552e3868ffb9c0393f647db7690e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-642d9746b13bdefc7cefb5a1b4f53ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -96,7 +97,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -383,7 +384,7 @@ window.Quarto = {
 </header>
 
 
-<p>Standard Markov chain Monte Carlo (MCMC) methods <span class="citation" data-cites="Itzykson:1989sx">(<a href="#ref-Itzykson:1989sx" role="doc-biblioref">Itzykson and Drouffe 1989</a>)</span> can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref">Albergo, Kanwar, and Shanahan 2019</a>)</span> leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system.</p>
+<p>Standard Markov chain Monte Carlo (MCMC) methods <span class="citation" data-cites="Itzykson:1989sx">(<a href="#ref-Itzykson:1989sx" role="doc-biblioref">Itzykson and Drouffe 1989</a>)</span> can be inefficient at sampling rare events such as phase transitions. Near criticality, simulations become increasingly expensive due to the local nature of typical update proposals, resulting in large autocorrelation times. Recent approaches <span class="citation" data-cites="Albergo_2019">(<a href="#ref-Albergo_2019" role="doc-biblioref">Albergo et al. 2019</a>)</span> leverage normalizing flows (generative models) to learn an invertible map from a simple prior (e.g., a Gaussian) to an approximation of the Boltzmann distribution of the physical system.</p>
 <section id="discretizing-the-phi4-theory" class="level2">
 <h2 class="anchored" data-anchor-id="discretizing-the-phi4-theory">Discretizing the <span class="math inline">\(\phi^4\)</span> theory</h2>
 <p>We begin with the Euclidean action for a scalar <span class="math inline">\(\phi^4\)</span> theory in <span class="math inline">\(1 + 1\)</span> dimensions. By performing a Wick rotation to map real time to Euclidean time and discretizing the space-time on a lattice where <span class="math inline">\(\Delta x = \Delta t = 1\)</span>, the action takes the following form <span class="math display">\[
@@ -412,7 +413,7 @@ L(\tilde{p}_f) = \int d\phi\, \tilde{p}_f(\phi) \left[ S(\phi) + \log \tilde{p}_
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>The primary strength of the Flow-based MCMC is its ability to propose global configurations at each step. In a test case with <span class="math inline">\(L = 16\)</span> and <span class="math inline">\(m^2 = -3.0\)</span>, the flow-based method achieved an autocorrelation time of <span class="math inline">\(\tau = 19.69\)</span> with an acceptance rate of <span class="math inline">\(17%\)</span>. As seen in the autocorrelation plots, the flow-based method decorrelates significantly faster than standard MC.</p>
+<p>The primary strength of the Flow-based MCMC is its ability to propose global configurations at each step. In a test case with <span class="math inline">\(L = 16\)</span> and <span class="math inline">\(m^2 = -3.0\)</span>, the flow-based method achieved an autocorrelation time of <span class="math inline">\(\tau = 19.69\)</span> with an acceptance rate of 17%. As seen in the autocorrelation plots, the flow-based method decorrelates significantly faster than standard MC.</p>
 <p>Despite these promising results, limitations remain. Training becomes increasingly unstable for lattice sizes larger than <span class="math inline">\(L = 16\)</span> and the acceptance rate is still low. These points will be the focus of future work.</p>
 <p>For a more in-depth discussion, refer to this <a href="https://kiize.github.io/posts/2026-02-02-flowmcmc/main.pdf">pdf</a>.</p>
 
@@ -420,7 +421,7 @@ L(\tilde{p}_f) = \int d\phi\, \tilde{p}_f(\phi) \left[ S(\phi) + \log \tilde{p}_
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Albergo_2019" class="csl-entry" role="listitem">
 Albergo, M. S., G. Kanwar, and P. E. Shanahan. 2019. <span>“Flow-Based Generative Models for Markov Chain Monte Carlo in Lattice Field Theory.”</span> <em>Physical Review D</em> 100 (3). <a href="https://doi.org/10.1103/physrevd.100.034515">https://doi.org/10.1103/physrevd.100.034515</a>.
 </div>

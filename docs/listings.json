@@ -1,10 +1,10 @@
 [
   {
-    "listing": "/posts/index.html",
+    "listing": "/writeups/index.html",
     "items": [
-      "/posts/2025-12-16-market-crashes/index.html",
-      "/posts/2025-11-18-glass-transition/index.html",
-      "/posts/2025-11-08-qchaos/index.html"
+      "/writeups/flow_based_MCMC/affine_couplings.html",
+      "/writeups/flow_based_MCMC/quartic_action.html",
+      "/writeups/flow_based_MCMC/index.html"
     ]
   },
   {
@@ -16,11 +16,12 @@
     ]
   },
   {
-    "listing": "/writeups/index.html",
+    "listing": "/posts/index.html",
     "items": [
-      "/writeups/quartic_action/index.html",
-      "/writeups/flow_based_MCMC/quartic_action.html",
-      "/writeups/flow_based_MCMC/index.html"
+      "/posts/2026-02-02-flowmcmc/index.html",
+      "/posts/2025-12-16-market-crashes/index.html",
+      "/posts/2025-11-18-glass-transition/index.html",
+      "/posts/2025-11-08-qchaos/index.html"
     ]
   }
 ]

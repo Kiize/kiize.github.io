@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Quartic field theory – Kiize’s personal page</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,19 +72,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8e843afbd2066de93d1d7e6c53ca696f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-15c9b3bb655f9e8484bc8dc58de29e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-642d9746b13bdefc7cefb5a1b4f53ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-c129552e3868ffb9c0393f647db7690e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-642d9746b13bdefc7cefb5a1b4f53ffb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -412,7 +414,7 @@ S[\phi] = \int d^{d}x \, \mathcal{L}(\phi) = \int d^{d}x \left( \frac{1}{2} (\pa
 </section>
 <section id="discretization" class="level2">
 <h2 class="anchored" data-anchor-id="discretization">Discretization</h2>
-<p>To discretize the action we first divide the lagrangian in the kinetic term, which depends on the derivatives of the field, and the potential term, which depends only on the field values. This is useful because the hard part of the discretization is the kinetic term, the potential term is straightforward to discretize.</p>
+<p>To discretize the action we first divide the Lagrangian into the kinetic term, which depends on the derivatives of the field, and the potential term, which depends only on the field values. This is useful because the hard part of the discretization is the kinetic term, the potential term is straightforward to discretize.</p>
 <p>We also fix <span class="math inline">\(d = 2\)</span>, that is we work on a two-dimensional lattice.</p>
 <p><span class="math display">\[
 S(\phi) =\int dt\, dx \, \left( \frac{1}{2}(\partial_{\mu} \phi)^{2} - V(\phi)\right).
@@ -427,7 +429,7 @@ S_{E}(\phi) =\int_{0}^\beta d\tau\ \int dx \, \left( \frac{1}{2}(\partial_{\tau}
 </section>
 <section id="integration-by-parts" class="level3">
 <h3 class="anchored" data-anchor-id="integration-by-parts">Integration by parts</h3>
-<p>Another useful trick is to integrate by part to transform the first derivatives into second one: <span class="math display">\[
+<p>Another useful trick is to integrate by parts to transform the first derivatives into second ones: <span class="math display">\[
 \int_{\Omega}(\partial \phi)^{2} \to (\phi \partial \phi)_{\partial\Omega}-\int_{\Omega}\phi \,\partial^{2} \phi,
 \]</span> For the spatial case, we are considering an infinite volume <span class="math inline">\(\Omega_{S}\)</span>, that is it has no boundary <span class="math inline">\(\partial\Omega_{S} = 0\)</span>, so we have <span class="math display">\[
 \int_{\Omega_{S}}dx\,(\partial_{x} \phi)^{2} \to -\int_{\Omega_{S}}\phi \,\partial_{x}^{2} \phi.
@@ -451,7 +453,7 @@ V(\phi(x, \tau)) \to V(\phi_{j}^n),
 <section id="kinetic-term" class="level3">
 <h3 class="anchored" data-anchor-id="kinetic-term">Kinetic term</h3>
 <p>The discretization of the kinetic term requires more attention due to the presence of the derivatives.</p>
-<p>The key idea is that, having used the integration by parts, the second derivative simplifies our calculations as it preserves the parity simmetry <span class="math inline">\(x \to -x, \tau \to -\tau\)</span>, in fact we can write the discretized second derivative as <span class="math display">\[
+<p>The key idea is that, having used the integration by parts, the second derivative simplifies our calculations as it preserves the parity symmetry <span class="math inline">\(x \to -x, \tau \to -\tau\)</span>, in fact we can write the discretized second derivative as <span class="math display">\[
 \partial_{x}^{2}\phi \to \frac{\phi_{j+1} + \phi_{j-1} - 2 \phi_{j}}{\Delta x^{2}}
 \]</span> and in the same way for the temporal case.</p>
 <p>We then have that <span class="math display">\[
@@ -464,7 +466,7 @@ V(\phi(x, \tau)) \to V(\phi_{j}^n),
 \int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{x}^{2}\phi \to  \sum_{j, n}  \frac{\Delta t}{\Delta x} \frac{1}{2} (2\phi_{j+1}\phi_{j} - 2 \phi_{j}^{2}).
 \]</span> We can do the same for the temporal case <span class="math display">\[
 \int d\tau\, dx \,\frac{1}{2} \phi\,\partial_{\tau}^{2}\phi \to  \sum_{j, n} \frac{\Delta x}{\Delta t} \frac{1}{2} (2\phi^{n+1}\phi^n - 2 (\phi^{n})^{2}).
-\]</span> We have omitted the other indices for both case for simplicity.</p>
+\]</span> We have omitted the other indices for both cases for simplicity.</p>
 <p>The final form for the discretized action will then be <span class="math display">\[
 S_{E}(\phi) = \sum_{j, n}\left[ -\frac{\Delta x}{\Delta t} (\phi^{n+1}_{j}\phi_{j}^n -  (\phi_{j}^{n})^{2}) - \frac{\Delta t}{\Delta x} (\phi_{j+1}^n\phi_{j}^n -  (\phi_{j}^{n})^{2}) + \Delta t \Delta x V(\phi_j^n)  \right]
 \]</span></p>

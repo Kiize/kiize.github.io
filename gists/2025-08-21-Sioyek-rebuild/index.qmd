@@ -11,7 +11,7 @@ In yay or paru, after you upgrade a package, it is up to you to rebuild it when 
 
 # The solution
 
-The command to rebuil sioyek is
+The command to rebuild sioyek is
 ```
 yay --rebuild sioyek
 ```

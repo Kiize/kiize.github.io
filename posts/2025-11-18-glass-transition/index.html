@@ -41,14 +41,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0db66c32e16a2551af7299a43e6f95a1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0db66c32e16a2551af7299a43e6f95a1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bbcf60f174677d77add3838f074ec6c8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-65609119c66ac8f529f664a58859b999.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-bbcf60f174677d77add3838f074ec6c8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-2e5e727f6393521b4b4bd7d09299147b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-4377f9d4cd2ca60573a5e3d586348848.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2e5e727f6393521b4b4bd7d09299147b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,6 +107,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -398,6 +399,54 @@ A(\tau) = \langle C(t) C(t + \tau)\rangle - \langle C \rangle^2.
 
 
 </main> <!-- /main -->
+<!-- Terminal atmosphere widget (PHY.ML_LAB style) -->
+<div id="kiize-terminal">
+  <div class="terminal-header">
+    <span class="terminal-title">SYS_STATUS: ONLINE</span>
+    <span class="terminal-dot"></span>
+  </div>
+  <div class="terminal-body" id="kiize-terminal-body">
+    &gt; LOADING SITE...<br>
+    &gt; PAGES INDEXED: OK<br>
+    &gt; RENDER: COMPLETE<br>
+  </div>
+</div>
+
+<script>
+  // Only show on large screens
+  (function () {
+    var terminal = document.getElementById('kiize-terminal');
+    var body = document.getElementById('kiize-terminal-body');
+    if (!terminal || !body) return;
+
+    if (window.innerWidth >= 1024) {
+      terminal.style.display = 'block';
+    }
+    window.addEventListener('resize', function () {
+      terminal.style.display = window.innerWidth >= 1024 ? 'block' : 'none';
+    });
+
+    var logs = [
+      '&gt; FETCHING CORE_DATA...',
+      '&gt; CALIBRATING VIEWPORT...',
+      '&gt; RENDER_THREAD: ACTIVE',
+      '&gt; PHYSICS_ENGINE: STABLE',
+      '&gt; LATENCY: 8ms',
+      '&gt; STATUS: NOMINAL',
+      '&gt; EQUATIONS LOADED...',
+      '&gt; LaTeX: COMPILED',
+    ];
+    var idx = 0;
+
+    setInterval(function () {
+      var lines = body.innerHTML.split('<br>');
+      if (lines.length > 6) lines.shift();
+      lines.push(logs[idx % logs.length]);
+      body.innerHTML = lines.join('<br>');
+      idx++;
+    }, 2800);
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

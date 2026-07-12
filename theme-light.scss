@@ -1,0 +1,30 @@
+/*-- scss:defaults --*/
+//
+// Light theme color system for Kiize's personal page
+//
+
+$white:    #fff !default;
+$black:    #000 !default;
+
+$light-bg:   #f8f9fa !default; // Clean light background
+$blue-clean: #0077b6 !default; // Primary Accent Blue for light theme
+$slate-dark: #212529 !default; // Dark text color
+
+$body-bg: $light-bg !default;
+$body-color: $slate-dark !default;
+$link-color: $blue-clean !default;
+
+$primary:       $blue-clean !default;
+$secondary:     #6c757d !default;
+$success:       #198754 !default;
+$info:          #0dcaf0 !default;
+$warning:       #ffc107 !default;
+$danger:        #dc3545 !default;
+$light:         #f8f9fa !default;
+$dark:          #212529 !default;
+
+$navbar-bg: #ffffff !default;
+$navbar-fg: $slate-dark !default;
+
+$font-family-sans-serif: "Hanken Grotesk", system-ui, -apple-system, sans-serif !default;
+$font-family-monospace: "JetBrains Mono", monospace !default;

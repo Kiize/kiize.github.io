@@ -25,7 +25,10 @@ format:
     css: styles.css
     number-sections: false
     respect-user-color-scheme: true
-    include-after-body: _includes/terminal.html
+    include-after-body:
+      - text: |
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+          <script src="/animations.js"></script>
 
 page:
   toc: true

@@ -1,42 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ==========================================
-   0. Theme Variables (Light & Dark Configuration)
-   ========================================== */
-
-/* Colori quando il tema è CHIARO */
 .quarto-light {
   --body-bg: #f8f9fa;
   --grid-color: rgba(0, 0, 0, 0.04);
   --text-main: #212529;
   --text-muted: #6c757d;
   --heading-color: #0b2545;
-  --accent-color: #0077b6;         /* Un blu pulito al posto del cyan glow */
+  --accent-color: #0077b6;
   --accent-hover: #0096c7;
   --card-bg: #ffffff;
   --card-border: rgba(0, 0, 0, 0.1);
   --selection-bg: #0077b6;
   --selection-color: #ffffff;
+  --toggle-icon-color: #000000;
 }
 
-/* Colori quando il tema è SCURO (I tuoi colori originali) */
 .quarto-dark {
   --body-bg: #101415;
   --grid-color: rgba(132, 148, 149, 0.04);
   --text-main: #e0e3e5;
   --text-muted: #b9cacb;
   --heading-color: #dbfcff;
-  --accent-color: #00dbe9;         /* Il tuo iconico Cyan Glow */
+  --accent-color: #00dbe9;
   --accent-hover: #7df4ff;
   --card-bg: rgba(25, 28, 30, 0.85);
   --card-border: rgba(59, 73, 75, 0.5);
   --selection-bg: #00f0ff;
   --selection-color: #002022;
+  --toggle-icon-color: #00dbe9;
 }
 
-/* ==========================================
-   1. Global Atmosphere: Grid Background & Typography
-   ========================================== */
 html {
   scroll-behavior: smooth;
 }
@@ -51,7 +44,6 @@ body {
   color: var(--text-main);
 }
 
-/* Selection highlight */
 ::selection {
   background: var(--selection-bg);
   color: var(--selection-color);
@@ -62,17 +54,15 @@ h1, h2, h3, h4, h5, h6, .title, .navbar-brand {
   font-weight: 700;
 }
 
-/* Large display headings (index page sections) */
 h1.title, .quarto-title h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--heading-color) !important;
   font-weight: 700;
-  -webkit-text-fill-color: unset; /* Override any gradient leftover */
+  -webkit-text-fill-color: unset;
 }
 
-/* Section headers inside content */
 h1, h2 {
   color: var(--heading-color);
 }
@@ -81,7 +71,6 @@ h3, h4 {
   color: var(--text-muted);
 }
 
-/* Body link styling */
 a {
   color: var(--accent-color);
   transition: color 0.2s ease;
@@ -90,9 +79,6 @@ a:hover {
   color: var(--accent-hover);
 }
 
-/* ==========================================
-   2. Glassmorphic Navbar
-   ========================================== */
 .navbar {
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -110,7 +96,6 @@ a:hover {
   border-bottom: 1px solid rgba(0, 119, 182, 0.15) !important;
 }
 
-/* Site title / brand */
 .navbar-title {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 14px !important;
@@ -120,7 +105,6 @@ a:hover {
   text-transform: uppercase;
 }
 
-/* Nav links — bright, legible */
 .navbar-nav .nav-link,
 .navbar-nav .nav-link .menu-text {
   font-family: 'Hanken Grotesk', sans-serif !important;
@@ -136,7 +120,6 @@ a:hover {
   color: var(--heading-color) !important;
 }
 
-/* Active link: text + accent underline */
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.active .menu-text {
   color: var(--heading-color) !important;
@@ -144,65 +127,44 @@ a:hover {
   padding-bottom: 2px;
 }
 
-/* ── Navigation tool: fix opacity suppression ──────────────── */
-.quarto-navigation-tool {
+.quarto-color-scheme-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease-in-out !important;
   opacity: 1 !important;
+  visibility: visible !important;
+  border: none !important;
+  background-color: transparent !important;
 }
 
-/* ── Light/dark theme toggle ────────────────────────────────── */
+.quarto-color-scheme-toggle i,
+.quarto-color-scheme-toggle .bi,
 .quarto-color-scheme-toggle .bi::before {
-  filter: brightness(1.4) !important;
-  width: 1.2rem !important;
-  height: 1.2rem !important;
+  color: var(--toggle-icon-color) !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  display: inline-block !important;
 }
 
-.quarto-color-scheme-toggle:not(.alternate) .bi::before {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgba(185,202,203,1)' viewBox='0 0 16 16'%3e%3cpath d='M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z'/%3e%3c/svg%3e") !important;
+.quarto-color-scheme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.quarto-color-scheme-toggle.alternate .bi::before {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgba(0,219,233,1)' viewBox='0 0 16 16'%3e%3cpath d='M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3e%3c/svg%3e") !important;
+.quarto-dark .quarto-color-scheme-toggle:hover {
+  box-shadow: 0 0 12px rgba(0, 219, 233, 0.4);
+  border-color: var(--accent-hover) !important;
 }
 
-/* ── Search button ──────────────────────────────────────────── */
-#quarto-search .aa-DetachedSearchButton,
-#quarto-search button {
-  color: var(--text-muted) !important;
-  background: transparent;
-  border: none;
-  opacity: 1 !important;
-}
-#quarto-search .aa-DetachedSearchButton:hover,
-#quarto-search button:hover {
-  color: var(--accent-color) !important;
-}
-#quarto-search svg {
-  stroke: var(--text-muted);
-  fill: none;
-  transition: stroke 0.2s ease;
-  opacity: 1 !important;
-}
-#quarto-search:hover svg,
-#quarto-search button:hover svg {
-  stroke: var(--accent-color);
+.navbar-nav-scroll {
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* ── Hamburger menu button ──────────────────────────────────── */
-.navbar-toggler {
-  border: 1px solid var(--card-border) !important;
-  padding: 4px 8px;
-  opacity: 1 !important;
-}
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 2px var(--accent-color) !important;
-}
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28185%2C202%2C203%2C1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* ==========================================
-   3. Grid Listing Cards (Projects page)
-   ========================================== */
 .quarto-grid-link {
   text-decoration: none !important;
 }
@@ -222,7 +184,6 @@ a:hover {
   box-shadow: 0 0 20px rgba(0, 219, 233, 0.12), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Scanline overlay on card image hover */
 .card-img-top {
   position: relative;
   overflow: hidden;
@@ -255,7 +216,6 @@ a:hover {
   transform: scale(1.08);
 }
 
-/* Card text */
 .listing-title {
   color: var(--heading-color) !important;
   font-weight: 600;
@@ -288,9 +248,6 @@ a:hover {
   margin-bottom: 0.4rem;
 }
 
-/* ==========================================
-   4. Default Listing (Gists / Writeups pages)
-   ========================================== */
 .quarto-listing-default .list-group-item {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
@@ -304,9 +261,6 @@ a:hover {
   box-shadow: 0 0 12px rgba(0, 219, 233, 0.08);
 }
 
-/* ==========================================
-   5. Categories / Tags
-   ========================================== */
 .quarto-category {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 10px !important;
@@ -325,9 +279,6 @@ a:hover {
   color: var(--body-bg) !important;
 }
 
-/* ==========================================
-   6. Callouts & Code blocks
-   ========================================== */
 .callout {
   border-left-width: 4px !important;
   border-radius: 4px !important;
@@ -335,18 +286,12 @@ a:hover {
   border-color: var(--accent-color) !important;
 }
 
-.callout-caution  { border-color: #ffb4ab !important; }
-.callout-warning  { border-color: #ffc107 !important; }
-.callout-tip      { border-color: #c0c1ff !important; }
-.callout-note     { border-color: var(--accent-color) !important; }
-
 code, pre {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 13px !important;
   border-radius: 2px;
 }
 
-/* Inline code chip */
 code:not(pre code) {
   background-color: rgba(49, 49, 192, 0.15) !important;
   color: var(--accent-color) !important;
@@ -354,9 +299,6 @@ code:not(pre code) {
   padding: 1px 5px;
 }
 
-/* ==========================================
-   7. Custom Scrollbar
-   ========================================== */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -372,9 +314,6 @@ code:not(pre code) {
   background: var(--accent-color);
 }
 
-/* ==========================================
-   8. Terminal Widget (injected by include-after-body)
-   ========================================== */
 #kiize-terminal {
   position: fixed;
   bottom: 2rem;
@@ -388,41 +327,4 @@ code:not(pre code) {
   padding: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   display: none;
-}
-
-#kiize-terminal .terminal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-
-#kiize-terminal .terminal-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.07em;
-  color: var(--accent-color);
-  text-transform: uppercase;
-}
-
-#kiize-terminal .terminal-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ffb4ab;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
-}
-
-#kiize-terminal .terminal-body {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  height: 100px;
-  overflow: hidden;
 }

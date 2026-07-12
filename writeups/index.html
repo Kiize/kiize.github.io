@@ -391,7 +391,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1769731200000" data-listing-file-modified-sort="1783852284809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="563">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1769731200000" data-listing-file-modified-sort="1783854535109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="563">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../writeups/flow_based_MCMC/affine_couplings.html" class="no-external">Affine couplings</a>
@@ -409,7 +409,7 @@ Jan 30, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1768780800000" data-listing-file-modified-sort="1783852284810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="874">
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1768780800000" data-listing-file-modified-sort="1783854535109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="874">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../writeups/flow_based_MCMC/quartic_action.html" class="no-external">Quartic field theory</a>
@@ -427,7 +427,7 @@ Jan 19, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1768262400000" data-listing-file-modified-sort="1783852284810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="360">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1768262400000" data-listing-file-modified-sort="1783854535109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="360">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../writeups/flow_based_MCMC/index.html" class="no-external">Overview of flow based MCMC</a>
@@ -448,54 +448,6 @@ Jan 13, 2026
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
-<!-- Terminal atmosphere widget (PHY.ML_LAB style) -->
-<div id="kiize-terminal">
-  <div class="terminal-header">
-    <span class="terminal-title">SYS_STATUS: ONLINE</span>
-    <span class="terminal-dot"></span>
-  </div>
-  <div class="terminal-body" id="kiize-terminal-body">
-    &gt; LOADING SITE...<br>
-    &gt; PAGES INDEXED: OK<br>
-    &gt; RENDER: COMPLETE<br>
-  </div>
-</div>
-
-<script>
-  // Only show on large screens
-  (function () {
-    var terminal = document.getElementById('kiize-terminal');
-    var body = document.getElementById('kiize-terminal-body');
-    if (!terminal || !body) return;
-
-    if (window.innerWidth >= 1024) {
-      terminal.style.display = 'block';
-    }
-    window.addEventListener('resize', function () {
-      terminal.style.display = window.innerWidth >= 1024 ? 'block' : 'none';
-    });
-
-    var logs = [
-      '&gt; FETCHING CORE_DATA...',
-      '&gt; CALIBRATING VIEWPORT...',
-      '&gt; RENDER_THREAD: ACTIVE',
-      '&gt; PHYSICS_ENGINE: STABLE',
-      '&gt; LATENCY: 8ms',
-      '&gt; STATUS: NOMINAL',
-      '&gt; EQUATIONS LOADED...',
-      '&gt; LaTeX: COMPILED',
-    ];
-    var idx = 0;
-
-    setInterval(function () {
-      var lines = body.innerHTML.split('<br>');
-      if (lines.length > 6) lines.shift();
-      lines.push(logs[idx % logs.length]);
-      body.innerHTML = lines.join('<br>');
-      idx++;
-    }, 2800);
-  })();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -910,6 +862,8 @@ Jan 13, 2026
   });
   </script>
 </div> <!-- /content -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="../animations.js"></script>
 
 
 

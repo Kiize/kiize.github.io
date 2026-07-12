@@ -469,54 +469,6 @@ f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi),
 </section>
 
 </main> <!-- /main -->
-<!-- Terminal atmosphere widget (PHY.ML_LAB style) -->
-<div id="kiize-terminal">
-  <div class="terminal-header">
-    <span class="terminal-title">SYS_STATUS: ONLINE</span>
-    <span class="terminal-dot"></span>
-  </div>
-  <div class="terminal-body" id="kiize-terminal-body">
-    &gt; LOADING SITE...<br>
-    &gt; PAGES INDEXED: OK<br>
-    &gt; RENDER: COMPLETE<br>
-  </div>
-</div>
-
-<script>
-  // Only show on large screens
-  (function () {
-    var terminal = document.getElementById('kiize-terminal');
-    var body = document.getElementById('kiize-terminal-body');
-    if (!terminal || !body) return;
-
-    if (window.innerWidth >= 1024) {
-      terminal.style.display = 'block';
-    }
-    window.addEventListener('resize', function () {
-      terminal.style.display = window.innerWidth >= 1024 ? 'block' : 'none';
-    });
-
-    var logs = [
-      '&gt; FETCHING CORE_DATA...',
-      '&gt; CALIBRATING VIEWPORT...',
-      '&gt; RENDER_THREAD: ACTIVE',
-      '&gt; PHYSICS_ENGINE: STABLE',
-      '&gt; LATENCY: 8ms',
-      '&gt; STATUS: NOMINAL',
-      '&gt; EQUATIONS LOADED...',
-      '&gt; LaTeX: COMPILED',
-    ];
-    var idx = 0;
-
-    setInterval(function () {
-      var lines = body.innerHTML.split('<br>');
-      if (lines.length > 6) lines.shift();
-      lines.push(logs[idx % logs.length]);
-      body.innerHTML = lines.join('<br>');
-      idx++;
-    }, 2800);
-  })();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -931,6 +883,8 @@ f(\phi) = g_{1} \circ g_{2} \circ \dots g_{n}(\phi),
   });
   </script>
 </div> <!-- /content -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="../../animations.js"></script>
 
 
 

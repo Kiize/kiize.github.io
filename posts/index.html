@@ -395,7 +395,7 @@ Each project includes a short overview, methods, figures, and links to code or r
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1769990400000" data-listing-file-modified-sort="1783852284805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="451">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1769990400000" data-listing-file-modified-sort="1783854535105" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="451">
 <a href="../posts/2026-02-02-flowmcmc/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img loading='lazy' src="thumbnail.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -415,7 +415,7 @@ Feb 2, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1765843200000" data-listing-file-modified-sort="1783852284805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="380">
+<div class="g-col-1" data-index="1" data-listing-date-sort="1765843200000" data-listing-file-modified-sort="1783854535105" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="380">
 <a href="../posts/2025-12-16-market-crashes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -437,7 +437,7 @@ Dec 16, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1763424000000" data-listing-file-modified-sort="1783852284805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="528">
+<div class="g-col-1" data-index="2" data-listing-date-sort="1763424000000" data-listing-file-modified-sort="1783854535104" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="528">
 <a href="../posts/2025-11-18-glass-transition/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -459,7 +459,7 @@ Nov 18, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1762560000000" data-listing-file-modified-sort="1783852284805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
+<div class="g-col-1" data-index="3" data-listing-date-sort="1762560000000" data-listing-file-modified-sort="1783854535104" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
 <a href="../posts/2025-11-08-qchaos/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -484,54 +484,6 @@ Nov 8, 2025
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
-<!-- Terminal atmosphere widget (PHY.ML_LAB style) -->
-<div id="kiize-terminal">
-  <div class="terminal-header">
-    <span class="terminal-title">SYS_STATUS: ONLINE</span>
-    <span class="terminal-dot"></span>
-  </div>
-  <div class="terminal-body" id="kiize-terminal-body">
-    &gt; LOADING SITE...<br>
-    &gt; PAGES INDEXED: OK<br>
-    &gt; RENDER: COMPLETE<br>
-  </div>
-</div>
-
-<script>
-  // Only show on large screens
-  (function () {
-    var terminal = document.getElementById('kiize-terminal');
-    var body = document.getElementById('kiize-terminal-body');
-    if (!terminal || !body) return;
-
-    if (window.innerWidth >= 1024) {
-      terminal.style.display = 'block';
-    }
-    window.addEventListener('resize', function () {
-      terminal.style.display = window.innerWidth >= 1024 ? 'block' : 'none';
-    });
-
-    var logs = [
-      '&gt; FETCHING CORE_DATA...',
-      '&gt; CALIBRATING VIEWPORT...',
-      '&gt; RENDER_THREAD: ACTIVE',
-      '&gt; PHYSICS_ENGINE: STABLE',
-      '&gt; LATENCY: 8ms',
-      '&gt; STATUS: NOMINAL',
-      '&gt; EQUATIONS LOADED...',
-      '&gt; LaTeX: COMPILED',
-    ];
-    var idx = 0;
-
-    setInterval(function () {
-      var lines = body.innerHTML.split('<br>');
-      if (lines.length > 6) lines.shift();
-      lines.push(logs[idx % logs.length]);
-      body.innerHTML = lines.join('<br>');
-      idx++;
-    }, 2800);
-  })();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -946,6 +898,8 @@ Nov 8, 2025
   });
   </script>
 </div> <!-- /content -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="../animations.js"></script>
 
 
 

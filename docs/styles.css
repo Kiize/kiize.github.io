@@ -1,47 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* ==========================================================================
+   Modernist Design System Overrides for Quarto Website
+   Derived from Design/_ds/modernist-2e6ab629-4bdc-47c6-9f76-6062f2dd4e73/styles.css
+   ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* --- Modernist Color Tokens --- */
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #ec3013;
+  --color-accent-600: #dd2b0f;
+  --color-accent-700: #ae1800;
+  --color-accent-100: #fff2ef;
+  --color-accent-800: #7c1405;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+
+  --font-heading: "Archivo", system-ui, sans-serif;
+  --font-heading-weight: 800;
+  --font-body: "Archivo", system-ui, sans-serif;
+
+  --leading: 28px;
+  --half: 14px;
+  --edge: clamp(20px, 5vw, 72px);
+  --measure: 62ch;
+}
+
+/* Quarto Light Mode Theme Variables */
 .quarto-light {
-  --body-bg: #f8f9fa;
-  --grid-color: rgba(0, 0, 0, 0.04);
-  --text-main: #212529;
-  --text-muted: #6c757d;
-  --heading-color: #0b2545;
-  --accent-color: #0077b6;
-  --accent-hover: #0096c7;
-  --card-bg: #ffffff;
-  --card-border: rgba(0, 0, 0, 0.1);
-  --selection-bg: #0077b6;
-  --selection-color: #ffffff;
-  --toggle-icon-color: #000000;
+  --body-bg: #f3f2f2;
+  --grid-color: rgba(32, 30, 29, 0.04);
+  --text-main: #201e1d;
+  --text-muted: color-mix(in srgb, #201e1d 70%, transparent);
+  --heading-color: #201e1d;
+  --accent-color: #ec3013;
+  --accent-hover: #dd2b0f;
+  --card-bg: #eae9e9;
+  --card-border: var(--color-divider);
+  --selection-bg: color-mix(in srgb, #ec3013 30%, transparent);
+  --selection-color: #201e1d;
+  --toggle-icon-color: #201e1d;
 }
 
+/* Quarto Dark Mode Theme Variables (Inverted Modernist Warm Palette) */
 .quarto-dark {
-  --body-bg: #101415;
-  --grid-color: rgba(132, 148, 149, 0.04);
-  --text-main: #e0e3e5;
-  --text-muted: #b9cacb;
-  --heading-color: #dbfcff;
-  --accent-color: #00dbe9;
-  --accent-hover: #7df4ff;
-  --card-bg: rgba(25, 28, 30, 0.85);
-  --card-border: rgba(59, 73, 75, 0.5);
-  --selection-bg: #00f0ff;
-  --selection-color: #002022;
-  --toggle-icon-color: #00dbe9;
+  --color-bg: #1c1a19;
+  --color-surface: #262322;
+  --color-text: #eae7e7;
+  --color-accent: #ff563c;
+  --color-accent-600: #ff9783;
+  --color-accent-700: #ffc4b8;
+  --color-accent-100: #3d1c16;
+  --color-accent-800: #ffe0d9;
+  --color-divider: color-mix(in srgb, #eae7e7 25%, transparent);
+
+  --body-bg: #1c1a19;
+  --grid-color: rgba(234, 231, 231, 0.04);
+  --text-main: #eae7e7;
+  --text-muted: color-mix(in srgb, #eae7e7 70%, transparent);
+  --heading-color: #ffffff;
+  --accent-color: #ff563c;
+  --accent-hover: #ff9783;
+  --card-bg: #262322;
+  --card-border: var(--color-divider);
+  --selection-bg: color-mix(in srgb, #ff563c 40%, transparent);
+  --selection-color: #ffffff;
+  --toggle-icon-color: #ff563c;
 }
 
+/* --- Global Reset & Typography --- */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 40px 40px;
+  margin: 0;
   background-color: var(--body-bg) !important;
-  font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
   color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -50,81 +90,102 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .title, .navbar-brand {
-  font-family: 'Hanken Grotesk', sans-serif;
-  font-weight: 700;
+  font-family: var(--font-heading) !important;
+  font-weight: var(--font-heading-weight) !important;
+  letter-spacing: -0.015em;
+  color: var(--heading-color);
+  margin-top: 0;
 }
 
 h1.title, .quarto-title h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(32px, 4.5vw, 56px);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--heading-color) !important;
-  font-weight: 700;
-  -webkit-text-fill-color: unset;
+  font-weight: 800;
+  margin-bottom: var(--half);
 }
 
-h1, h2 {
-  color: var(--heading-color);
-}
-
-h3, h4 {
-  color: var(--text-muted);
-}
+h1 { font-size: 38px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
 
 a {
   color: var(--accent-color);
+  text-underline-offset: 3px;
   transition: color 0.2s ease;
 }
 a:hover {
   color: var(--accent-hover);
 }
 
+/* Grayscale image helper */
+.grayscale, .card-img-top img, .quarto-figure img {
+  filter: grayscale(1) contrast(1.08);
+  transition: filter 0.3s ease;
+}
+.quarto-grid-item.card:hover .card-img-top img,
+.quarto-figure img:hover {
+  filter: grayscale(0.2) contrast(1);
+}
+
+/* Horizontal Rules */
+hr, .hr, .rule2 {
+  height: 2px;
+  border: 0;
+  margin: calc(1.5 * var(--leading)) 0;
+  background: var(--color-divider);
+}
+
+/* Modernist Kicker / Eyebrow */
+.kicker, .card-kicker {
+  display: block;
+  font-size: 13px;
+  line-height: var(--half);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin: 0 0 calc(var(--leading) - var(--half));
+}
+
+/* --- Navigation Bar --- */
 .navbar {
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  background-color: rgba(16, 20, 21, 0.92) !important;
-  border-bottom: 1px solid rgba(0, 219, 233, 0.2) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  padding: var(--space-3) max(var(--edge), calc((100% - 1160px) / 2 + var(--edge))) !important;
+  background-color: var(--body-bg) !important;
+  border-bottom: 2px solid var(--color-divider) !important;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.quarto-light .navbar {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-bottom: 1px solid rgba(0, 119, 182, 0.15) !important;
-}
-
 .navbar-title {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 14px !important;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--accent-color) !important;
-  text-transform: uppercase;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  color: var(--heading-color) !important;
+  letter-spacing: -0.01em;
 }
 
 .navbar-nav .nav-link,
 .navbar-nav .nav-link .menu-text {
-  font-family: 'Hanken Grotesk', sans-serif !important;
-  font-size: 14px !important;
+  font-family: var(--font-heading) !important;
   font-weight: 600;
-  color: var(--text-muted) !important;
+  font-size: 14px !important;
+  color: var(--text-main) !important;
   transition: color 0.2s ease;
-  letter-spacing: 0.02em;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:hover .menu-text {
-  color: var(--heading-color) !important;
+  color: var(--accent-color) !important;
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.active .menu-text {
-  color: var(--heading-color) !important;
+  color: var(--accent-color) !important;
   border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 2px;
 }
 
 .quarto-color-scheme-toggle {
@@ -132,95 +193,88 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 6px 10px !important;
-  border-radius: 6px !important;
+  border-radius: 0px !important;
   cursor: pointer !important;
   transition: all 0.2s ease-in-out !important;
   opacity: 1 !important;
-  visibility: visible !important;
-  border: none !important;
+  border: 1px solid var(--color-divider) !important;
   background-color: transparent !important;
 }
 
 .quarto-color-scheme-toggle i,
-.quarto-color-scheme-toggle .bi,
-.quarto-color-scheme-toggle .bi::before {
+.quarto-color-scheme-toggle .bi {
   color: var(--toggle-icon-color) !important;
   font-size: 1.1rem !important;
-  font-weight: bold !important;
-  display: inline-block !important;
 }
 
-.quarto-color-scheme-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* --- Modernist Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text-main);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  border-radius: 0px; /* Sharp corners per Modernist design */
+  transition: all 0.2s ease;
 }
 
-.quarto-dark .quarto-color-scheme-toggle:hover {
-  box-shadow: 0 0 12px rgba(0, 219, 233, 0.4);
-  border-color: var(--accent-hover) !important;
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff !important;
+}
+.btn-primary:hover {
+  background: var(--color-accent-600);
 }
 
-.navbar-nav-scroll {
-  display: flex !important;
-  align-items: center !important;
+.btn-secondary {
+  border-color: var(--color-divider);
+}
+.btn-secondary:hover {
+  background: color-mix(in srgb, var(--text-main) 8%, transparent);
 }
 
+.btn-ghost {
+  color: var(--accent-color);
+  padding-inline: 4px;
+}
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+}
+
+/* --- Cards / Grid Listings --- */
 .quarto-grid-link {
   text-decoration: none !important;
 }
 
 .quarto-grid-item.card {
-  backdrop-filter: blur(12px);
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
-  border-radius: 4px !important;
+  border-radius: 0px !important; /* Modernist sharp edges */
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: none !important;
 }
 
 .quarto-grid-item.card:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-2px);
   border-color: var(--accent-color) !important;
-  box-shadow: 0 0 20px rgba(0, 219, 233, 0.12), 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.card-img-top {
-  position: relative;
-  overflow: hidden;
-  background-color: #1d2022;
-  margin-bottom: 0;
-}
-
-.card-img-top::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 50%, rgba(0, 219, 233, 0.05) 50%);
-  background-size: 100% 4px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
-.quarto-grid-item.card:hover .card-img-top::after {
-  opacity: 1;
-}
-
-.thumbnail-image.card-img {
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.quarto-grid-item.card:hover .thumbnail-image.card-img {
-  transform: scale(1.08);
 }
 
 .listing-title {
+  font-family: var(--font-heading) !important;
+  font-weight: var(--font-heading-weight) !important;
   color: var(--heading-color) !important;
-  font-weight: 600;
-  font-size: 18px !important;
-  transition: color 0.2s ease;
+  font-size: 19px !important;
+  line-height: 1.2;
 }
 
 .quarto-grid-item.card:hover .listing-title {
@@ -230,13 +284,13 @@ a:hover {
 .listing-description {
   color: var(--text-muted);
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .listing-date, .card-text.text-muted {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px !important;
+  font-size: 12px !important;
   color: var(--text-muted) !important;
-  letter-spacing: 0.05em;
 }
 
 .listing-reading-time {
@@ -245,86 +299,76 @@ a:hover {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent-color) !important;
-  margin-bottom: 0.4rem;
 }
 
 .quarto-listing-default .list-group-item {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
-  border-radius: 4px !important;
-  margin-bottom: 8px;
-  transition: all 0.25s ease;
+  border-radius: 0px !important;
+  margin-bottom: 12px;
+  padding: 16px;
+  transition: border-color 0.2s ease;
 }
 
 .quarto-listing-default .list-group-item:hover {
   border-color: var(--accent-color) !important;
-  box-shadow: 0 0 12px rgba(0, 219, 233, 0.08);
 }
 
-.quarto-category {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  padding: 3px 9px !important;
-  border-radius: 2px !important;
-  background: rgba(49, 49, 192, 0.15) !important;
+/* --- Tags / Badges --- */
+.tag, .quarto-category {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-heading) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.02em;
+  padding: 3px 10px !important;
+  border-radius: 0px !important;
+  background: var(--color-accent-100) !important;
   color: var(--accent-color) !important;
-  border: 1px solid var(--card-border) !important;
-  letter-spacing: 0.03em;
-  transition: all 0.2s ease-in-out;
+  border: 1px solid var(--color-divider) !important;
+  text-transform: none;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
 }
 
 .quarto-category:hover {
-  background-color: var(--accent-color) !important;
-  color: var(--body-bg) !important;
+  background: var(--accent-color) !important;
+  color: #ffffff !important;
 }
 
+/* --- Code & Callouts --- */
 .callout {
   border-left-width: 4px !important;
-  border-radius: 4px !important;
+  border-radius: 0px !important;
   background-color: var(--card-bg) !important;
   border-color: var(--accent-color) !important;
 }
 
 code, pre {
   font-family: 'JetBrains Mono', monospace !important;
-  font-size: 13px !important;
-  border-radius: 2px;
+  font-size: 13.5px !important;
+  border-radius: 0px;
 }
 
 code:not(pre code) {
-  background-color: rgba(49, 49, 192, 0.15) !important;
+  background-color: color-mix(in srgb, var(--accent-color) 12%, transparent) !important;
   color: var(--accent-color) !important;
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--color-divider);
   padding: 1px 5px;
 }
 
+/* --- Scrollbar --- */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--body-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3b494b;
-  border-radius: 4px;
+  background: color-mix(in srgb, var(--text-main) 30%, transparent);
+  border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
-}
-
-#kiize-terminal {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 999;
-  width: 260px;
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border);
-  padding: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  display: none;
 }

@@ -1,7 +1,9 @@
 project:
   type: website
-  output-dir: docs  
-  resources: "*.png"
+  output-dir: docs
+  resources:
+    - "*.png"
+    - "assets/**"
 website:
   title: "Kiize's personal page"
   navbar:
@@ -26,9 +28,7 @@ format:
     number-sections: false
     respect-user-color-scheme: true
     include-after-body:
-      - text: |
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-          <script src="/animations.js"></script>
+      - _includes/ising-bg.html
 
 page:
   toc: true
